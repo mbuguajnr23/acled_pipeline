@@ -1,0 +1,6 @@
+# Ignore virtual environment folder
+.acled/
+
+# Ignore all files in the data folder
+data/*
+!data/.gitkeep
