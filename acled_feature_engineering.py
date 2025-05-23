@@ -101,7 +101,7 @@ def prepare_acled_data(file_path, pred_window_months=3, event_threshold=5):
         'total_events': 0,
         'violent_events': 0,
         'fatalities': 0,
-        'event_diversity': 0,
+        'event_diversity': 0,+-
         'actor1_count': 0,
         'actor2_count': 0
     })
