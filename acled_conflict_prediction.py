@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime, timedelta
@@ -50,7 +51,6 @@ print(acled_data.isnull().sum())
 print("\nMissing values (percentage):")
 print((acled_data.isnull().sum() / len(acled_data) * 100).sort_values(ascending=False))
 
-
 # 3. Convert 'event_date' and check timeframe
 print("\nProcessing 'event_date'...")
 if 'event_date' in acled_data.columns:
@@ -74,6 +74,93 @@ else:
     print("Column 'event_date' not found. Skipping time-based analysis.")
     # Consider exiting if event_date is crucial and missing
     # exit()
+
+
+# --- EDA Text Output ---
+output_filename = f"{CHARTS_DIRECTORY}eda_summary_output.txt" # Save in your charts directory
+
+with open(output_filename, 'w') as f:
+    original_stdout = sys.stdout  # Save a reference to the original standard output
+    sys.stdout = f  # Redirect standard output to the file
+
+    print("ACLED DATASET EXPLORATORY ANALYSIS SUMMARY\n")
+    print("========================================\n")
+
+    print("1. Dataset Shape:\n")
+    print(acled_data.shape)
+    print("\n----------------------------------------\n")
+
+    print("2. First 5 Rows (head()):\n")
+    print(acled_data.head())
+    print("\n----------------------------------------\n")
+
+    print("3. Last 5 Rows (tail()):\n") # Good to see the end of the data too
+    print(acled_data.tail())
+    print("\n----------------------------------------\n")
+
+    print("4. Column Names:\n")
+    print(acled_data.columns.tolist())
+    print("\n----------------------------------------\n")
+
+    print("5. Data Types (info()):\n")
+    # df.info() prints directly, so capture its output or print components
+    acled_data.info() # This will now print to the file
+    print("\n(Note: The above info() output is comprehensive)\n")
+    # Alternatively, for just dtypes:
+    # print(acled_data.dtypes)
+    print("\n----------------------------------------\n")
+
+    print("6. Descriptive Statistics (describe()):\n")
+    print("Numerical features:\n")
+    print(acled_data.describe())
+    print("\nCategorical/Object features (includes top, freq for object types):\n")
+    print(acled_data.describe(include=['object', 'category'])) # Add 'category' if you convert types
+    print("\nAll features:\n")
+    print(acled_data.describe(include='all'))
+    print("\n----------------------------------------\n")
+
+    print("7. Missing Values (sum):\n")
+    print(acled_data.isnull().sum())
+    print("\n----------------------------------------\n")
+
+    print("8. Missing Values (percentage, sorted):\n")
+    print((acled_data.isnull().sum() / len(acled_data) * 100).sort_values(ascending=False))
+    print("\n----------------------------------------\n")
+
+    if 'event_date' in acled_data.columns and pd.api.types.is_datetime64_any_dtype(acled_data['event_date']):
+        print("9. Time Range of Data:\n")
+        print(f"From {acled_data['event_date'].min()} to {acled_data['event_date'].max()}")
+        print("\n----------------------------------------\n")
+
+    if 'event_type' in acled_data.columns:
+        print("10. Event Type Frequencies:\n")
+        print(acled_data['event_type'].value_counts())
+        print("\nPercentage:\n")
+        print(acled_data['event_type'].value_counts(normalize=True) * 100)
+        print("\n----------------------------------------\n")
+
+    if 'country' in acled_data.columns:
+        print("11. Country Frequencies (Top 15):\n")
+        print(acled_data['country'].value_counts().nlargest(15))
+        print("\nPercentage (Top 15):\n")
+        print(acled_data['country'].value_counts(normalize=True).nlargest(15) * 100)
+        print("\n----------------------------------------\n")
+
+    # Add any other specific value_counts or summaries you want
+    if 'fatalities' in acled_data.columns:
+        print("12. Fatalities Summary:\n")
+        print(acled_data['fatalities'].describe())
+        print(f"Total fatalities: {acled_data['fatalities'].sum()}")
+        print(f"Number of events with 0 fatalities: {len(acled_data[acled_data['fatalities'] == 0])}")
+        print(f"Number of events with >0 fatalities: {len(acled_data[acled_data['fatalities'] > 0])}")
+        print(f"Number of events with NA fatalities: {acled_data['fatalities'].isnull().sum()}")
+        print("\n----------------------------------------\n")
+
+
+    sys.stdout = original_stdout  # Reset standard output to the console
+
+print(f"\nEDA text summary saved to {output_filename}")
+
 
 # 4. Explore event types and their frequency
 if 'event_type' in acled_data.columns:
