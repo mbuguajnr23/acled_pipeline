@@ -229,7 +229,7 @@ if __name__ == "__main__":
     # Adjust these paths as needed
     visualize_conflict_risk(
         model_path='spatial_conflict_model.pkl', 
-        data_path='data\acled_modeling_data.csv',
+        data_path='data/acled_modeling_data_prepared.csv',
         admin1_shapefile=None  # Add path to shapefile if available
     )
     

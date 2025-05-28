@@ -11,7 +11,7 @@ import shap
 import warnings
 warnings.filterwarnings('ignore')
 
-def train_baseline_model(data_path='data\acled_modeling_data.csv'):
+def train_baseline_model(data_path='data/acled_modeling_data_prepared.csv'):
     """
     Train a baseline model for conflict prediction using ACLED data
     

@@ -1,9 +1,0 @@
-pandas
-numpy
-scikit-learn
-geopandas
-matplotlib
-seaborn
-xgboost
-shap
-shapely

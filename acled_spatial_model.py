@@ -10,105 +10,134 @@ import warnings
 warnings.filterwarnings('ignore')
 
 def add_spatial_features(df, shapefile_path=None):
-    """
-    Add spatial features to the dataset
-    
-    Parameters:
-    -----------
-    df : DataFrame
-        Prepared ACLED data with features
-    shapefile_path : str
-        Path to a shapefile containing admin1 boundaries (optional)
-        
-    Returns:
-    --------
-    DataFrame with additional spatial features
-    """
     print("Adding spatial features...")
-    
-    # If shapefile is provided, we can use it to find neighboring regions
-    if shapefile_path:
-        try:
-            # Load shapefile with admin1 boundaries
-            gdf = gpd.read_file(shapefile_path)
+    if not shapefile_path:
+        print("No shapefile path provided. Falling back to country-based proximity.")
+        return add_country_based_spatial_features(df)
+
+    try:
+        gdf = gpd.read_file(shapefile_path)
+        # Standardize GDF columns (example, make this more robust or parametric)
+        # Common admin level 0 (country) and 1 (province/state) names
+        # This needs to be robust to different shapefile schemas
+        rename_map = {}
+        # Try common country name variants
+        for col_name in ['CNTRY_NAME', 'COUNTRY', 'NAME_0', 'ADM0_NAME', 'admin0Name']:
+            if col_name in gdf.columns:
+                rename_map[col_name] = 'country'
+                break
+        # Try common admin1 name variants
+        for col_name in ['ADMIN1', 'NAME_1', 'ADM1_NAME', 'admin1Name', 'province', 'state']:
+            if col_name in gdf.columns:
+                rename_map[col_name] = 'admin1'
+                break
+        
+        if 'country' not in rename_map or 'admin1' not in rename_map:
+            raise ValueError("Could not find standard country/admin1 columns in shapefile.")
+        gdf = gdf.rename(columns=rename_map)
+        gdf = gdf[['country', 'admin1', 'geometry']] # Keep only necessary columns
+
+        # Ensure CRS is consistent or reproject (assuming WGS84 for ACLED)
+        if gdf.crs and gdf.crs != "EPSG:4326":
+            print(f"Reprojecting shapefile from {gdf.crs} to EPSG:4326")
+            gdf = gdf.to_crs("EPSG:4326")
+
+        # Create spatial index
+        if not gdf.sindex: # Build it if it does not exist (geopandas might do this automatically on first access)
+             gdf.sindex
+
+        neighbors_map = {}
+        print("Identifying neighbors using spatial index...")
+        for idx, focal_row in gdf.iterrows():
+            focal_geom = focal_row['geometry']
+            focal_region_id = (focal_row['country'], focal_row['admin1'])
+            neighbors_map[focal_region_id] = []
+
+            # Query spatial index for potential neighbors (those whose bounding boxes intersect)
+            possible_matches_indices = list(gdf.sindex.intersection(focal_geom.bounds))
+            possible_matches = gdf.iloc[possible_matches_indices]
             
-            # Ensure we have country and admin1 columns matching our data
-            if 'COUNTRY' in gdf.columns and 'ADMIN1' in gdf.columns:
-                gdf = gdf.rename(columns={'COUNTRY': 'country', 'ADMIN1': 'admin1'})
+            # Perform precise check (touches) only on these candidates
+            # Exclude self using the original index 'idx'
+            precise_neighbors = possible_matches[possible_matches.geometry.touches(focal_geom) & (possible_matches.index != idx)]
             
-            # Find neighboring regions
-            neighbors = {}
-            for idx, row in gdf.iterrows():
-                country = row['country']
-                admin1 = row['admin1']
-                geom = row['geometry']
-                
-                # Find regions that share a boundary
-                neighbors[(country, admin1)] = []
-                for idx2, row2 in gdf.iterrows():
-                    if idx != idx2:
-                        if geom.touches(row2['geometry']):
-                            neighbors[(country, admin1)].append((row2['country'], row2['admin1']))
-            
-            print(f"Identified neighbors for {len(neighbors)} regions")
-            
-            # Group the data by date
-            date_groups = df.groupby('date')
-            
-            # Initialize new columns for neighbor features
-            neighbor_features = [
-                'neighbor_violent_events', 
-                'neighbor_fatalities',
-                'neighbor_conflict_density'
-            ]
-            
-            for col in neighbor_features:
-                df[col] = 0.0
-            
-            # For each date, calculate spatial features
-            for date, group in date_groups:
-                # Create a dictionary for quick lookups
-                region_data = {(row['country'], row['admin1']): row for _, row in group.iterrows()}
-                
-                # Update the main dataframe with neighbor information
-                for idx, row in group.iterrows():
-                    country = row['country']
-                    admin1 = row['admin1']
+            for _, neighbor_row in precise_neighbors.iterrows():
+                neighbors_map[focal_region_id].append((neighbor_row['country'], neighbor_row['admin1']))
+        
+        print(f"Identified neighbors for {len(neighbors_map)} regions.")
+
+        # Initialize new columns for neighbor features
+        neighbor_feature_cols = ['neighbor_violent_events_lag1_avg', 'neighbor_fatalities_lag1_avg', 'neighbor_conflict_density_lag1']
+        for col in neighbor_feature_cols:
+            df[col] = 0.0
+
+        # Lagged columns we need from neighbors
+        neighbor_source_cols = {
+            'violent_events_count_lag1': 'neighbor_violent_events_lag1_avg', 
+            'fatalities_lag1': 'neighbor_fatalities_lag1_avg',
+            # For density, we need violent_events_count_lag1
+        }
+
+        # Check if source lag columns exist
+        for source_col in neighbor_source_cols.keys():
+            if source_col not in df.columns:
+                print(f"WARNING: Source column '{source_col}' for neighbor features not found in DataFrame. Spatial features might be all zeros.")
+                # Fallback or skip if critical columns are missing
+                # return add_country_based_spatial_features(df.copy()) # Pass a copy to avoid modifying original df in a failed attempt
+
+        print("Calculating spatial features from neighbors...")
+        # Group by date to process each time slice
+        # Iterating this way can still be slow. A merge-based approach would be faster.
+
+        
+        # Create a temporary mapping for faster lookups within each date group
+        # df needs to be indexed by ['date', 'country', 'admin1'] for faster lookup
+        df_indexed = df.set_index(['date', 'country', 'admin1'])
+
+        for idx_df, row_df in df.iterrows(): # Iterate over the original df to fill its rows
+            current_date = row_df['date']
+            focal_region_id = (row_df['country'], row_df['admin1'])
+
+            if focal_region_id not in neighbors_map:
+                continue # Region not in shapefile or no neighbors found
+
+            current_neighbors = neighbors_map[focal_region_id]
+            if not current_neighbors:
+                continue
+
+            sum_neighbor_violent_lag1 = 0
+            sum_neighbor_fatalities_lag1 = 0
+            active_neighbors_lag1 = 0
+            valid_neighbors_count = 0
+
+            for neighbor_id in current_neighbors:
+                try:
+                    # Lookup neighbor's data for the same date
+                    neighbor_data_row = df_indexed.loc[(current_date, neighbor_id[0], neighbor_id[1])]
                     
-                    if (country, admin1) in neighbors:
-                        neighbor_list = neighbors[(country, admin1)]
-                        
-                        # Calculate metrics from neighbors
-                        if neighbor_list:
-                            n_violent_events = 0
-                            n_fatalities = 0
-                            
-                            for n_country, n_admin1 in neighbor_list:
-                                if (n_country, n_admin1) in region_data:
-                                    n_row = region_data[(n_country, n_admin1)]
-                                    n_violent_events += n_row['violent_events_lag1']
-                                    n_fatalities += n_row['fatalities_lag1']
-                            
-                            # Average neighbor metrics
-                            n_count = len(neighbor_list)
-                            df.at[idx, 'neighbor_violent_events'] = n_violent_events / n_count
-                            df.at[idx, 'neighbor_fatalities'] = n_fatalities / n_count
-                            df.at[idx, 'neighbor_conflict_density'] = sum(
-                                1 for n in neighbor_list if (n in region_data and 
-                                                            region_data[n]['violent_events_lag1'] > 0)
-                            ) / n_count
-            
-            print("Added spatial features based on shapefile")
-            
-        except Exception as e:
-            print(f"Error processing shapefile: {e}")
-            print("Falling back to country-based proximity...")
-            # Fall back to country-based proximity method
-            add_country_based_spatial_features(df)
-    else:
-        # Use country-based proximity as a simpler approach
-        add_country_based_spatial_features(df)
-    
+                    # Accumulate based on *EXISTING LAG FEATURES* in neighbor_data_row
+                    if 'violent_events_count_lag1' in neighbor_data_row: # Check if column exists
+                        sum_neighbor_violent_lag1 += neighbor_data_row.get('violent_events_count_lag1', 0) # Use .get for safety
+                    if 'fatalities_lag1' in neighbor_data_row:
+                        sum_neighbor_fatalities_lag1 += neighbor_data_row.get('fatalities_lag1', 0)
+                    if neighbor_data_row.get('violent_events_count_lag1', 0) > 0:
+                        active_neighbors_lag1 += 1
+                    valid_neighbors_count += 1
+                except KeyError:
+                    # Neighbor data not found for this date (shouldn't happen if grid is complete)
+                    pass # Or log this
+
+            if valid_neighbors_count > 0:
+                df.at[idx_df, 'neighbor_violent_events_lag1_avg'] = sum_neighbor_violent_lag1 / valid_neighbors_count
+                df.at[idx_df, 'neighbor_fatalities_lag1_avg'] = sum_neighbor_fatalities_lag1 / valid_neighbors_count
+                df.at[idx_df, 'neighbor_conflict_density_lag1'] = active_neighbors_lag1 / valid_neighbors_count
+        
+        print("Added spatial features based on shapefile.")
+
+    except Exception as e:
+        print(f"Error processing shapefile: {e}")
+        print("Falling back to country-based proximity...")
+        df = add_country_based_spatial_features(df.copy()) # Pass a copy
     return df
 
 def add_country_based_spatial_features(df):
@@ -123,7 +152,7 @@ def add_country_based_spatial_features(df):
     
     # Add country-level features
     country_features = {
-        'country_violent_events_lag1': 'violent_events_lag1',
+        'country_violent_events_lag1': 'violent_events_count_lag1',
         'country_fatalities_lag1': 'fatalities_lag1'
     }
     
@@ -149,7 +178,7 @@ def add_country_based_spatial_features(df):
     for (date, country), group in country_date_groups:
         total_regions = len(group)
         conflict_regions = sum(1 for _, row in group.iterrows() 
-                              if row['violent_events_lag1'] > 0)
+                              if row['violent_events_count_lag1'] > 0)
         
         conflict_density = conflict_regions / total_regions if total_regions > 0 else 0
         
@@ -160,7 +189,7 @@ def add_country_based_spatial_features(df):
     print("Added country-based spatial features")
     return df
 
-def train_spatial_model(data_path='data\acled_modeling_data.csv', shapefile_path=None):
+def train_spatial_model(data_path, shapefile_path=None):
     """
     Train a model incorporating spatial features for conflict prediction
     
@@ -241,7 +270,7 @@ def train_spatial_model(data_path='data\acled_modeling_data.csv', shapefile_path
     plt.ylabel('Precision')
     plt.title(f'Precision-Recall Curve - Spatial Model (AUC: {pr_auc:.4f})')
     plt.grid(True)
-    plt.savefig('charts\pr_curve_spatial_model.png')
+    plt.savefig('charts/pr_curve_spatial_model.png')
     
     # Feature importance
     importances = model.feature_importances_
@@ -252,7 +281,7 @@ def train_spatial_model(data_path='data\acled_modeling_data.csv', shapefile_path
     plt.bar(range(min(20, X_train.shape[1])), importances[indices[:20]], align='center')
     plt.xticks(range(min(20, X_train.shape[1])), [feature_cols[i] for i in indices[:20]], rotation=90)
     plt.tight_layout()
-    plt.savefig('charts\feature_importance_spatial_model.png')
+    plt.savefig('charts/feature_importance_spatial_model.png')
     
     print("\nTop 10 important features:")
     for i in range(min(10, len(indices))):
@@ -285,4 +314,5 @@ def train_spatial_model(data_path='data\acled_modeling_data.csv', shapefile_path
 
 if __name__ == "__main__":
     # Adjust paths as needed
-    train_spatial_model(data_path='data\acled_modeling_data.csv', shapefile_path=None)
+    data_path='data/acled_modeling_data_prepared.csv'
+    train_spatial_model(data_path, shapefile_path=None)
