@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
+import geopandas as gpd
 
 def prepare_acled_data(file_path,
                        start_date_str='2012-01-01',
@@ -8,8 +9,8 @@ def prepare_acled_data(file_path,
                        pred_window_months=1,
                        event_threshold=1):
     """
-    Prepare ACLED data for conflict prediction modeling.
-
+    Prepare ACLED data for conflict prediction modeling
+    
     Parameters:
     -----------
     file_path : str
@@ -25,7 +26,7 @@ def prepare_acled_data(file_path,
 
     Returns:
     --------
-    DataFrame with features and target variable.
+    DataFrame with features and target variable
     """
 
     print(f"Loading ACLED data from: {file_path}")
