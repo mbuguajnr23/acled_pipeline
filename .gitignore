@@ -7,7 +7,3 @@ data/*
 
 output_pipeline_run/
 
-.gitignore 
-
-# 
- __pycache__/
