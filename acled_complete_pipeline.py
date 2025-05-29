@@ -12,7 +12,7 @@ import logging
 from acled_feature_engineering import prepare_acled_data
 from acled_spatial_model import train_spatial_model # Contains add_spatial_features too
 from acled_prediction_visualization import visualize_conflict_risk
-# acled_baseline_model will be imported if needed
+
 
 # --- Configuration ---
 # Define standard subdirectories within the main output directory
@@ -36,7 +36,7 @@ logger.addHandler(ch)
 # File handler will be added in run_complete_pipeline
 
 def run_complete_pipeline(
-    raw_acled_file_path, # Renamed for clarity
+    raw_acled_file_path, 
     main_output_dir="output_pipeline", # Renamed for clarity
     start_date_str='2012-01-01', # Added for prepare_acled_data
     end_date_str='2022-12-31',   # Added for prepare_acled_data
@@ -50,7 +50,7 @@ def run_complete_pipeline(
     All outputs (prepared data, models, charts, logs, reports) will be saved
     within subdirectories of `main_output_dir`.
     """
-    original_cwd = os.getcwd() # Save original CWD
+    original_cwd = os.getcwd()
 
     try:
         # --- Setup Output Directories and Logging ---
@@ -76,7 +76,7 @@ def run_complete_pipeline(
         os.makedirs(reports_dir, exist_ok=True)
 
         # Define specific file paths
-        # Note: raw_acled_file_path and shapefile_path are absolute or relative to original CWD
+        
         prepared_data_csv_path = os.path.join(prepared_data_dir, "acled_modeling_data_prepared.csv")
         spatial_model_path = os.path.join(models_dir, "spatial_conflict_model.pkl")
         # Baseline models might have different names, handle within its function
@@ -121,7 +121,7 @@ def run_complete_pipeline(
         model_results = train_spatial_model(
             data_path=prepared_data_csv_path, 
             shapefile_path=abs_shapefile_path,
-            output_model_path=spatial_model_path, # New arg for train_spatial_model
+            output_model_path=spatial_model_path, 
             output_charts_dir=charts_dir        # New arg for train_spatial_model
         )
         if not model_results or 'model' not in model_results:
@@ -137,11 +137,14 @@ def run_complete_pipeline(
         
         # visualize_conflict_risk should accept output_charts_dir as an argument
         predictions_df = visualize_conflict_risk(
-            model_object=model_results['model'], # Pass the model object directly
-            data_for_prediction_path=prepared_data_csv_path, # Data with features for prediction
+            model_object=model_results['model'], # Correct: passing the model object
+            data_for_prediction_path=prepared_data_csv_path,
             admin1_shapefile_path=abs_admin1_shapefile_path,
-            output_charts_dir=charts_dir # New arg
+            output_charts_dir=charts_dir, # Pass the correct charts directory
+            output_reports_dir=reports_dir, # Pass the correct reports directory
+            prediction_offset_months=prediction_window_months # Use pipeline's setting
         )
+
         if predictions_df is None or predictions_df.empty:
             logger.warning("Prediction visualization step did not produce output.")
             # Create a dummy df if it's None, for the report
