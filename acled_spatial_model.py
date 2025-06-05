@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
@@ -189,7 +190,8 @@ def add_country_based_spatial_features(df):
     print("Added country-based spatial features")
     return df
 
-def train_spatial_model(data_path, shapefile_path=None):
+def train_spatial_model(data_path, shapefile_path, output_model_path='models/spatial_conflict_model.pkl', # ADDED
+                        output_charts_dir='charts'):
     """
     Train a model incorporating spatial features for conflict prediction
     
@@ -263,6 +265,7 @@ def train_spatial_model(data_path, shapefile_path=None):
     pr_auc = auc(recall, precision)
     print(f"PR AUC: {pr_auc:.4f}")
     
+    pr_curve_path = os.path.join(output_charts_dir, 'pr_curve_spatial_model.png')
     # Plot PR curve
     plt.figure(figsize=(8, 6))
     plt.plot(recall, precision, marker='.')
@@ -270,18 +273,23 @@ def train_spatial_model(data_path, shapefile_path=None):
     plt.ylabel('Precision')
     plt.title(f'Precision-Recall Curve - Spatial Model (AUC: {pr_auc:.4f})')
     plt.grid(True)
-    plt.savefig('charts/pr_curve_spatial_model.png')
+    plt.savefig(pr_curve_path) # Use the constructed path
+    plt.close()
+    print(f"Saved PR curve to {pr_curve_path}")
     
     # Feature importance
     importances = model.feature_importances_
     indices = np.argsort(importances)[::-1]
     
+    fi_plot_path = os.path.join(output_charts_dir, 'feature_importance_spatial_model.png') 
     plt.figure(figsize=(12, 8))
     plt.title('Feature Importances - Spatial Model')
     plt.bar(range(min(20, X_train.shape[1])), importances[indices[:20]], align='center')
     plt.xticks(range(min(20, X_train.shape[1])), [feature_cols[i] for i in indices[:20]], rotation=90)
     plt.tight_layout()
-    plt.savefig('charts/feature_importance_spatial_model.png')
+    plt.savefig(fi_plot_path) # Use the constructed path
+    plt.close()
+    print(f"Saved feature importance plot to {fi_plot_path}")
     
     print("\nTop 10 important features:")
     for i in range(min(10, len(indices))):
@@ -298,6 +306,8 @@ def train_spatial_model(data_path, shapefile_path=None):
     
     # Save the model
     import pickle
+    if os.path.dirname(output_model_path): # Check if output_model_path includes a directory part
+        os.makedirs(os.path.dirname(output_model_path), exist_ok=True)
     with open('spatial_conflict_model.pkl', 'wb') as f:
         pickle.dump(model, f)
     print("Saved model to 'spatial_conflict_model.pkl'")

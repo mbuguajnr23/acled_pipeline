@@ -7,8 +7,15 @@ from matplotlib.colors import LinearSegmentedColormap
 import seaborn as sns
 import calendar
 from datetime import datetime, timedelta
+import logging
+import os
 
-def visualize_conflict_risk(model_path, data_path, admin1_shapefile=None):
+# Configure logging
+from acled_spatial_model import add_spatial_features
+
+logger_viz = logging.getLogger("ACLED_Pipeline.Visualization")
+
+def visualize_conflict_risk(model_object, data_path, admin1_shapefile=None, output_charts_dir='charts_dir', output_reports_dir='reports_dir', prediction_offset_months=1 ):
     """
     Generate and visualize conflict risk predictions across Africa
     
@@ -23,8 +30,7 @@ def visualize_conflict_risk(model_path, data_path, admin1_shapefile=None):
     """
     print("Loading model and data...")
     # Load the model
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
+    model = model_object
     
     # Load the data
     df = pd.read_csv(data_path)

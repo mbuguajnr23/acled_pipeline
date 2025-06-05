@@ -134,19 +134,21 @@ def run_complete_pipeline(
         # visualize_conflict_risk needs to be adapted to save charts to charts_dir
         abs_admin1_shapefile_path = os.path.abspath(shapefile_path) if shapefile_path else None # Assuming admin1 shapefile is the same
         
-        
-        # visualize_conflict_risk should accept output_charts_dir as an argument
-        predictions_df = visualize_conflict_risk(
-            model_object=model_results['model'], # Pass the model object directly
-            data_for_prediction_path=prepared_data_csv_path, # Data with features for prediction
-            admin1_shapefile_path=abs_admin1_shapefile_path,
-            output_charts_dir=charts_dir # New arg
-        )
-        if predictions_df is None or predictions_df.empty:
-            logger.warning("Prediction visualization step did not produce output.")
-            # Create a dummy df if it's None, for the report
-            predictions_df = pd.DataFrame(columns=['admin1', 'country', 'conflict_probability', 'risk_category'])
-
+     
+        if model_results and 'model' in model_results: # Add a check
+            actual_model_object = model_results['model']
+            predictions_df = visualize_conflict_risk(
+                model_object=actual_model_object, # <<< Pass the actual model object
+                data_path=prepared_data_csv_path,
+                admin1_shapefile=abs_admin1_shapefile_path,
+                output_charts_dir=charts_dir,
+                output_reports_dir=reports_dir,
+                prediction_offset_months=prediction_window_months
+            )
+        else:
+            logger.error("Spatial model object not found in model_results. Skipping visualization.")
+            predictions_df = pd.DataFrame(columns=['admin1', 'country', 'conflict_probability', 'risk_category']) # Ensure it's defined
+       
 
         # --- Step 4: Run baseline model for comparison if requested ---
         baseline_results_dict = None
