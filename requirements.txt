@@ -1,0 +1,18 @@
+# Core Data Handling and Numerical Operations
+pandas
+numpy
+
+# Plotting and Visualization
+matplotlib
+seaborn
+
+# Geospatial Data Handling
+geopandas
+
+# Machine Learning - Models and Metrics
+scikit-learn
+xgboost  
+
+# Model Explainability
+shap 
+
