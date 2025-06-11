@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# from sklearn.model_selection import TimeSeriesSplit # Using manual time split
+from sklearn.model_selection import TimeSeriesSplit # Using manual time split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, precision_recall_curve, auc
 from sklearn.preprocessing import StandardScaler
@@ -17,9 +17,7 @@ warnings.filterwarnings('ignore')
 # Get a logger for this module (assuming it's part of the ACLED_Pipeline)
 logger_baseline = logging.getLogger("ACLED_Pipeline.Baseline")
 
-def train_baseline_model(data_path, # Removed default, will be passed by pipeline
-                         output_charts_dir, # Removed default, will be passed by pipeline
-                         # prediction_window_months=1 # Not directly used in this func, but good for interface consistency
+def train_baseline_model(data_path,output_charts_dir
                         ):
     """
     Train baseline models for conflict prediction using ACLED data.

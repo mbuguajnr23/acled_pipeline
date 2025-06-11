@@ -7,12 +7,11 @@ from datetime import datetime
 import logging
 
 # Import our modules
-# Ensure these modules are in the same directory as this script,
-# or the Python path is set up to find them.
+
 from acled_feature_engineering import prepare_acled_data
 from acled_spatial_model import train_spatial_model # Contains add_spatial_features too
 from acled_prediction_visualization import visualize_conflict_risk
-# acled_baseline_model will be imported if needed
+
 
 # --- Configuration ---
 # Define standard subdirectories within the main output directory
@@ -93,7 +92,6 @@ def run_complete_pipeline(
         # --- Step 1: Data preparation and feature engineering ---
         logger.info("--- STEP 1: Data preparation and feature engineering ---")
         # prepare_acled_data should save its output to prepared_data_csv_path
-        # We need to modify prepare_acled_data to accept an output_path argument
        
 
         # Ensure raw_acled_file_path is absolute or resolvable from current context
@@ -121,9 +119,8 @@ def run_complete_pipeline(
         model_results = train_spatial_model(
             data_path=prepared_data_csv_path, 
             shapefile_path=abs_shapefile_path,
-            output_model_path=spatial_model_path, # New arg for train_spatial_model
-            output_charts_dir=charts_dir        # New arg for train_spatial_model
-        )
+            output_model_path=spatial_model_path, 
+            output_charts_dir=charts_dir       
         if not model_results or 'model' not in model_results:
             logger.error("Spatial model training failed or did not return results. Exiting.")
             return
@@ -276,3 +273,4 @@ if __name__ == "__main__":
         run_baseline=not args.skip_baseline,
         shapefile_path=args.shapefile
     )
+    # Note: If shapefile_path is None, prepare_acled_data and train_spatial_model should handle it gracefully

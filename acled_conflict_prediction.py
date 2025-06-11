@@ -10,7 +10,7 @@ warnings.filterwarnings('ignore')
 # --- Configuration ---
 DATA_FILE_PATH = 'data/acled_data.csv' 
 CHARTS_DIRECTORY = 'charts/'
-AFRICA_SHAPEFILE_PATH = 'data\Africa_Countries\Africa_Countries.shp' # IMPORTANT: Update this path
+AFRICA_SHAPEFILE_PATH = 'data/Africa_Countries/Africa_Countries.shp' # IMPORTANT: Update this path
 # AFRICA_SHAPEFILE_PATH = None
 
 def save_and_show_plot(fig, filename_base, title=""):
