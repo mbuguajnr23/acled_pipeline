@@ -1,6 +1,16 @@
 # Ignore virtual environment folder
 .acled/
 
+# Ignore Python bytecode files
+__pycache__/
+
+# gitignore
+.gitignore
+
+
+output_pipeline_run/
+
+
 # Ignore all files in the data folder
 data/*
 !data/.gitkeep

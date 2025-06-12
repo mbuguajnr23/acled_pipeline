@@ -35,7 +35,7 @@ logger.addHandler(ch)
 # File handler will be added in run_complete_pipeline
 
 def run_complete_pipeline(
-    raw_acled_file_path, # Renamed for clarity
+    raw_acled_file_path, 
     main_output_dir="output_pipeline", # Renamed for clarity
     start_date_str='2012-01-01', # Added for prepare_acled_data
     end_date_str='2022-12-31',   # Added for prepare_acled_data
@@ -49,7 +49,7 @@ def run_complete_pipeline(
     All outputs (prepared data, models, charts, logs, reports) will be saved
     within subdirectories of `main_output_dir`.
     """
-    original_cwd = os.getcwd() # Save original CWD
+    original_cwd = os.getcwd()
 
     try:
         # --- Setup Output Directories and Logging ---
@@ -75,7 +75,7 @@ def run_complete_pipeline(
         os.makedirs(reports_dir, exist_ok=True)
 
         # Define specific file paths
-        # Note: raw_acled_file_path and shapefile_path are absolute or relative to original CWD
+        
         prepared_data_csv_path = os.path.join(prepared_data_dir, "acled_modeling_data_prepared.csv")
         spatial_model_path = os.path.join(models_dir, "spatial_conflict_model.pkl")
         # Baseline models might have different names, handle within its function

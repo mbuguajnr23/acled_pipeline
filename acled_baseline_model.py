@@ -219,6 +219,3 @@ def train_baseline_model(data_path,output_charts_dir
         logger_baseline.warning("No baseline models were run or results dictionary is empty.")
 
     return results
-
-if __name__ == "__main__":
-    train_baseline_model()
