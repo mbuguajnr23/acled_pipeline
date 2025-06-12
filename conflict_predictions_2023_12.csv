@@ -1,0 +1,898 @@
+country,admin1,conflict_probability,risk_category,prediction_for
+Algeria,Adrar,0.12719879,Very Low,December 2023
+Algeria,Ain Defla,0.062422507,Very Low,December 2023
+Algeria,Ain Salah,0.052364033,Very Low,December 2023
+Algeria,Ain Temouchent,0.024749123,Very Low,December 2023
+Algeria,Alger,0.2100537,Low,December 2023
+Algeria,Annaba,0.15379895,Very Low,December 2023
+Algeria,Batna,0.1647837,Very Low,December 2023
+Algeria,Bechar,0.061049517,Very Low,December 2023
+Algeria,Bejaia,0.093071125,Very Low,December 2023
+Algeria,Biskra,0.052990902,Very Low,December 2023
+Algeria,Blida,0.13099393,Very Low,December 2023
+Algeria,Bordj Bou Arreridj,0.095298804,Very Low,December 2023
+Algeria,Bouira,0.09352129,Very Low,December 2023
+Algeria,Boumerdes,0.11463593,Very Low,December 2023
+Algeria,Chlef,0.068787076,Very Low,December 2023
+Algeria,Constantine,0.11042217,Very Low,December 2023
+Algeria,Djanet,0.037689637,Very Low,December 2023
+Algeria,Djelfa,0.09159133,Very Low,December 2023
+Algeria,El Bayadh,0.012023642,Very Low,December 2023
+Algeria,El Oued,0.10167996,Very Low,December 2023
+Algeria,El Tarf,0.05364432,Very Low,December 2023
+Algeria,Ghardaia,0.04295018,Very Low,December 2023
+Algeria,Guelma,0.0804019,Very Low,December 2023
+Algeria,Illizi,0.06745945,Very Low,December 2023
+Algeria,Jijel,0.1387014,Very Low,December 2023
+Algeria,Khenchela,0.25723007,Low,December 2023
+Algeria,Laghouat,0.06258874,Very Low,December 2023
+Algeria,Mascara,0.046372842,Very Low,December 2023
+Algeria,Medea,0.052990902,Very Low,December 2023
+Algeria,Mila,0.09184822,Very Low,December 2023
+Algeria,Mostaganem,0.058855634,Very Low,December 2023
+Algeria,Msila,0.14754912,Very Low,December 2023
+Algeria,Naama,0.23598899,Low,December 2023
+Algeria,Oran,0.15979624,Very Low,December 2023
+Algeria,Ouargla,0.090625435,Very Low,December 2023
+Algeria,Oum El Bouaghi,0.08388073,Very Low,December 2023
+Algeria,Relizane,0.07572675,Very Low,December 2023
+Algeria,Saida,0.034952197,Very Low,December 2023
+Algeria,Setif,0.04473447,Very Low,December 2023
+Algeria,Sidi Bel Abbes,0.12229722,Very Low,December 2023
+Algeria,Skikda,0.24112834,Low,December 2023
+Algeria,Souk Ahras,0.036935672,Very Low,December 2023
+Algeria,Tamanrasset,0.14519425,Very Low,December 2023
+Algeria,Tebessa,0.0699773,Very Low,December 2023
+Algeria,Tiaret,0.116135955,Very Low,December 2023
+Algeria,Tindouf,0.33538345,Low,December 2023
+Algeria,Tipaza,0.08669963,Very Low,December 2023
+Algeria,Tissemsilt,0.054976296,Very Low,December 2023
+Algeria,Tizi Ouzou,0.12581962,Very Low,December 2023
+Algeria,Tlemcen,0.121728964,Very Low,December 2023
+Angola,Bengo,0.08871719,Very Low,December 2023
+Angola,Benguela,0.4637307,Moderate,December 2023
+Angola,Bie,0.40979978,Moderate,December 2023
+Angola,Cabinda,0.16545002,Very Low,December 2023
+Angola,Cuando Cubango,0.09110836,Very Low,December 2023
+Angola,Cuanza Norte,0.10082591,Very Low,December 2023
+Angola,Cuanza Sul,0.17627035,Very Low,December 2023
+Angola,Cunene,0.06928915,Very Low,December 2023
+Angola,Huambo,0.32916906,Low,December 2023
+Angola,Huila,0.39475676,Low,December 2023
+Angola,Luanda,0.7972664,High,December 2023
+Angola,Lunda Norte,0.48146504,Moderate,December 2023
+Angola,Lunda Sul,0.07205336,Very Low,December 2023
+Angola,Malanje,0.11707093,Very Low,December 2023
+Angola,Moxico,0.33146745,Low,December 2023
+Angola,Namibe,0.21797864,Low,December 2023
+Angola,Uige,0.093730204,Very Low,December 2023
+Angola,Zaire,0.20162101,Low,December 2023
+Benin,Alibori,0.9987857,Very High,December 2023
+Benin,Atacora,0.9790485,Very High,December 2023
+Benin,Atlantique,0.3664655,Low,December 2023
+Benin,Borgou,0.772035,High,December 2023
+Benin,Collines,0.2776235,Low,December 2023
+Benin,Couffo,0.088329606,Very Low,December 2023
+Benin,Donga,0.15011592,Very Low,December 2023
+Benin,Littoral,0.120995745,Very Low,December 2023
+Benin,Mono,0.08480792,Very Low,December 2023
+Benin,Oueme,0.12559506,Very Low,December 2023
+Benin,Plateau,0.117532186,Very Low,December 2023
+Benin,Zou,0.118301794,Very Low,December 2023
+Botswana,Central,0.051965307,Very Low,December 2023
+Botswana,Chobe,0.020312387,Very Low,December 2023
+Botswana,Kgatleng,0.020312387,Very Low,December 2023
+Botswana,Kweneng,0.16960497,Very Low,December 2023
+Botswana,Ngamiland,0.04593832,Very Low,December 2023
+Botswana,Ngwaketsi,0.05479641,Very Low,December 2023
+Botswana,North East,0.052364033,Very Low,December 2023
+Botswana,South East,0.08764186,Very Low,December 2023
+Burkina Faso,Boucle du Mouhoun,0.99970394,Very High,December 2023
+Burkina Faso,Cascades,0.9568965,Very High,December 2023
+Burkina Faso,Centre,0.7277328,High,December 2023
+Burkina Faso,Centre-Est,0.9966556,Very High,December 2023
+Burkina Faso,Centre-Nord,0.9997824,Very High,December 2023
+Burkina Faso,Centre-Ouest,0.61618245,High,December 2023
+Burkina Faso,Centre-Sud,0.41610208,Moderate,December 2023
+Burkina Faso,Est,0.99986136,Very High,December 2023
+Burkina Faso,Hauts-Bassins,0.9936621,Very High,December 2023
+Burkina Faso,Nord,0.99927026,Very High,December 2023
+Burkina Faso,Plateau-Central,0.074836805,Very Low,December 2023
+Burkina Faso,Sahel,0.9997154,Very High,December 2023
+Burkina Faso,Sud-Ouest,0.6556493,High,December 2023
+Burundi,Bubanza,0.671205,High,December 2023
+Burundi,Bujumbura Mairie,0.8904434,Very High,December 2023
+Burundi,Bujumbura Rural,0.6851143,High,December 2023
+Burundi,Bururi,0.44152135,Moderate,December 2023
+Burundi,Cankuzo,0.24661398,Low,December 2023
+Burundi,Cibitoke,0.9069538,Very High,December 2023
+Burundi,Gitega,0.7477196,High,December 2023
+Burundi,Karuzi,0.48339584,Moderate,December 2023
+Burundi,Kayanza,0.31621408,Low,December 2023
+Burundi,Kirundo,0.4778003,Moderate,December 2023
+Burundi,Makamba,0.6240665,High,December 2023
+Burundi,Muramvya,0.12967837,Very Low,December 2023
+Burundi,Muyinga,0.43720022,Moderate,December 2023
+Burundi,Mwaro,0.3057686,Low,December 2023
+Burundi,Ngozi,0.5058259,Moderate,December 2023
+Burundi,Rumonge,0.20524509,Low,December 2023
+Burundi,Rutana,0.34767005,Low,December 2023
+Burundi,Ruyigi,0.38115558,Low,December 2023
+Cameroon,Adamaoua,0.3548781,Low,December 2023
+Cameroon,Centre,0.8356907,Very High,December 2023
+Cameroon,Est,0.07746773,Very Low,December 2023
+Cameroon,Extreme-Nord,0.9997794,Very High,December 2023
+Cameroon,Littoral,0.799923,High,December 2023
+Cameroon,Nord,0.5064736,Moderate,December 2023
+Cameroon,Nord-Ouest,0.9997954,Very High,December 2023
+Cameroon,Ouest,0.75981045,High,December 2023
+Cameroon,Sud,0.12747118,Very Low,December 2023
+Cameroon,Sud-Ouest,0.9997769,Very High,December 2023
+Cape Verde,Boa Vista,0.042017348,Very Low,December 2023
+Cape Verde,Brava,0.03263964,Very Low,December 2023
+Cape Verde,Maio,0.023954349,Very Low,December 2023
+Cape Verde,Mosteiros,0.012023642,Very Low,December 2023
+Cape Verde,Porto Novo,0.02115906,Very Low,December 2023
+Cape Verde,Praia,0.14010698,Very Low,December 2023
+Cape Verde,Ribeira Brava,0.012023642,Very Low,December 2023
+Cape Verde,Ribeira Grande,0.02115906,Very Low,December 2023
+Cape Verde,Sal,0.02115906,Very Low,December 2023
+Cape Verde,Santa Catarina,0.058521744,Very Low,December 2023
+Cape Verde,Santa Catarina do Fogo,0.012023642,Very Low,December 2023
+Cape Verde,Santa Cruz,0.03022196,Very Low,December 2023
+Cape Verde,Sao Domingos,0.04370524,Very Low,December 2023
+Cape Verde,Sao Filipe,0.07026942,Very Low,December 2023
+Cape Verde,Sao Lourenco dos Orgaos,0.027856087,Very Low,December 2023
+Cape Verde,Sao Miguel,0.012023642,Very Low,December 2023
+Cape Verde,Sao Vicente,0.16860445,Very Low,December 2023
+Cape Verde,Tarrafal,0.012023642,Very Low,December 2023
+Cape Verde,Tarrafal de Sao Nicolau,0.012023642,Very Low,December 2023
+Central African Republic,Bamingui-Bangoran,0.7528948,High,December 2023
+Central African Republic,Bangui,0.8280205,Very High,December 2023
+Central African Republic,Basse-Kotto,0.11940168,Very Low,December 2023
+Central African Republic,Haut-Mbomou,0.9382037,Very High,December 2023
+Central African Republic,Haute-Kotto,0.46069843,Moderate,December 2023
+Central African Republic,Kemo,0.35916042,Low,December 2023
+Central African Republic,Lobaye,0.1597721,Very Low,December 2023
+Central African Republic,Mambere-Kadei,0.12605895,Very Low,December 2023
+Central African Republic,Mbomou,0.3444536,Low,December 2023
+Central African Republic,Nana-Grebizi,0.20765448,Low,December 2023
+Central African Republic,Nana-Mambere,0.91787827,Very High,December 2023
+Central African Republic,Ombella-M'Poko,0.44803733,Moderate,December 2023
+Central African Republic,Ouaka,0.5154062,Moderate,December 2023
+Central African Republic,Ouham,0.41584733,Moderate,December 2023
+Central African Republic,Ouham-Pende,0.7924512,High,December 2023
+Central African Republic,Sangha-Mbaere,0.01541721,Very Low,December 2023
+Central African Republic,Vakaga,0.68636245,High,December 2023
+Chad,Barh El Gazel,0.05139763,Very Low,December 2023
+Chad,Batha,0.06632893,Very Low,December 2023
+Chad,Borkou,0.13190733,Very Low,December 2023
+Chad,Chari Baguirmi,0.088329606,Very Low,December 2023
+Chad,Ennedi Est,0.056268457,Very Low,December 2023
+Chad,Ennedi Ouest,0.024749123,Very Low,December 2023
+Chad,Guera,0.61357355,High,December 2023
+Chad,Hadjer-Lamis,0.18244724,Very Low,December 2023
+Chad,Kanem,0.05829589,Very Low,December 2023
+Chad,Lac,0.4236267,Moderate,December 2023
+Chad,Logone Occidental,0.39405078,Low,December 2023
+Chad,Logone Oriental,0.50168765,Moderate,December 2023
+Chad,Mandoul,0.16183443,Very Low,December 2023
+Chad,Mayo Kebbi Est,0.06580557,Very Low,December 2023
+Chad,Mayo Kebbi Ouest,0.25975448,Low,December 2023
+Chad,Moyen-Chari,0.10209898,Very Low,December 2023
+Chad,Ndjamena,0.42652243,Moderate,December 2023
+Chad,Ouaddai,0.6040314,High,December 2023
+Chad,Salamat,0.05566121,Very Low,December 2023
+Chad,Sila,0.114257656,Very Low,December 2023
+Chad,Tandjile,0.06011475,Very Low,December 2023
+Chad,Tibesti,0.23309733,Low,December 2023
+Chad,Wadi Fira,0.05604646,Very Low,December 2023
+Comoros,Anjouan,0.18588614,Very Low,December 2023
+Comoros,Grande Comore,0.22029208,Low,December 2023
+Comoros,Moheli,0.012023642,Very Low,December 2023
+Comoros,Mwali ou Moheli,0.13020031,Very Low,December 2023
+Comoros,Ndzuwani ou Anjouan,0.10585292,Very Low,December 2023
+Comoros,Ngazidja ou Grande Comore,0.06588001,Very Low,December 2023
+Democratic Republic of Congo,Bas-Uele,0.28826424,Low,December 2023
+Democratic Republic of Congo,Equateur,0.13649392,Very Low,December 2023
+Democratic Republic of Congo,Haut-Katanga,0.73317033,High,December 2023
+Democratic Republic of Congo,Haut-Lomami,0.11392773,Very Low,December 2023
+Democratic Republic of Congo,Haut-Uele,0.73647076,High,December 2023
+Democratic Republic of Congo,Ituri,0.999671,Very High,December 2023
+Democratic Republic of Congo,Kasai,0.5875559,Moderate,December 2023
+Democratic Republic of Congo,Kasai-Central,0.39561778,Low,December 2023
+Democratic Republic of Congo,Kasai-Oriental,0.5746098,Moderate,December 2023
+Democratic Republic of Congo,Kinshasa,0.92976576,Very High,December 2023
+Democratic Republic of Congo,Kongo-Central,0.61338544,High,December 2023
+Democratic Republic of Congo,Kwango,0.8122375,Very High,December 2023
+Democratic Republic of Congo,Kwilu,0.5593956,Moderate,December 2023
+Democratic Republic of Congo,Lomami,0.3451865,Low,December 2023
+Democratic Republic of Congo,Lualaba,0.28990299,Low,December 2023
+Democratic Republic of Congo,Mai-Ndombe,0.73795426,High,December 2023
+Democratic Republic of Congo,Maniema,0.8988647,Very High,December 2023
+Democratic Republic of Congo,Mongala,0.12813692,Very Low,December 2023
+Democratic Republic of Congo,Nord-Kivu,0.99625057,Very High,December 2023
+Democratic Republic of Congo,Nord-Ubangi,0.16034247,Very Low,December 2023
+Democratic Republic of Congo,Sankuru,0.118905134,Very Low,December 2023
+Democratic Republic of Congo,Sud-Kivu,0.9996718,Very High,December 2023
+Democratic Republic of Congo,Sud-Ubangi,0.12814654,Very Low,December 2023
+Democratic Republic of Congo,Tanganyika,0.78598464,High,December 2023
+Democratic Republic of Congo,Tshopo,0.54434496,Moderate,December 2023
+Democratic Republic of Congo,Tshuapa,0.052364033,Very Low,December 2023
+Djibouti,Ali Sabieh,0.039900877,Very Low,December 2023
+Djibouti,Dikhil,0.08695143,Very Low,December 2023
+Djibouti,Djibouti,0.16453972,Very Low,December 2023
+Djibouti,Obock,0.025800312,Very Low,December 2023
+Djibouti,Tadjourah,0.054976296,Very Low,December 2023
+Egypt,Alexandria,0.11243572,Very Low,December 2023
+Egypt,Assiut,0.10932743,Very Low,December 2023
+Egypt,Aswan,0.055002216,Very Low,December 2023
+Egypt,Beheira,0.05604646,Very Low,December 2023
+Egypt,Beni Suef,0.06011475,Very Low,December 2023
+Egypt,Cairo,0.31667188,Low,December 2023
+Egypt,Dakahlia,0.10708393,Very Low,December 2023
+Egypt,Damietta,0.058810133,Very Low,December 2023
+Egypt,Fayoum,0.027671613,Very Low,December 2023
+Egypt,Gharbia,0.01541721,Very Low,December 2023
+Egypt,Giza,0.1272256,Very Low,December 2023
+Egypt,Ismailia,0.10855781,Very Low,December 2023
+Egypt,Kafr el-Sheikh,0.023570359,Very Low,December 2023
+Egypt,Luxor,0.03478566,Very Low,December 2023
+Egypt,Matrouh,0.05965424,Very Low,December 2023
+Egypt,Menia,0.16681896,Very Low,December 2023
+Egypt,Menoufia,0.06608182,Very Low,December 2023
+Egypt,New Valley,0.01541721,Very Low,December 2023
+Egypt,North Sinai,0.49790323,Moderate,December 2023
+Egypt,Port Said,0.055847928,Very Low,December 2023
+Egypt,Qalyubia,0.072158135,Very Low,December 2023
+Egypt,Qena,0.03100015,Very Low,December 2023
+Egypt,Red Sea,0.024749123,Very Low,December 2023
+Egypt,Sharqia,0.052364033,Very Low,December 2023
+Egypt,Sohag,0.027671613,Very Low,December 2023
+Egypt,South Sinai,0.0627381,Very Low,December 2023
+Egypt,Suez,0.01541721,Very Low,December 2023
+Equatorial Guinea,Bioko Norte,0.07017854,Very Low,December 2023
+Equatorial Guinea,Centro Sur,0.012023642,Very Low,December 2023
+Equatorial Guinea,Kie-Ntem,0.024749123,Very Low,December 2023
+Equatorial Guinea,Litoral,0.04593832,Very Low,December 2023
+Equatorial Guinea,Wele-Nzas,0.024749123,Very Low,December 2023
+Eritrea,Anseba,0.030600695,Very Low,December 2023
+Eritrea,Debub,0.05616826,Very Low,December 2023
+Eritrea,Debubawi Keih Bahri,0.022630714,Very Low,December 2023
+Eritrea,Gash Barka,0.052364033,Very Low,December 2023
+Eritrea,Maekel,0.115591876,Very Low,December 2023
+Eritrea,Semienawi Keih Bahri,0.022630714,Very Low,December 2023
+Ethiopia,Addis Ababa,0.62859774,High,December 2023
+Ethiopia,Afar,0.6287358,High,December 2023
+Ethiopia,Amhara,0.99940324,Very High,December 2023
+Ethiopia,Benshangul/Gumuz,0.43590724,Moderate,December 2023
+Ethiopia,Central Ethiopia,0.7431443,High,December 2023
+Ethiopia,Dire Dawa,0.064833194,Very Low,December 2023
+Ethiopia,Gambela,0.9754607,Very High,December 2023
+Ethiopia,Harari,0.07744681,Very Low,December 2023
+Ethiopia,Oromia,0.99971837,Very High,December 2023
+Ethiopia,Sidama,0.15194128,Very Low,December 2023
+Ethiopia,Somali,0.6331629,High,December 2023
+Ethiopia,South Ethiopia Region,0.79840755,High,December 2023
+Ethiopia,South West,0.083862886,Very Low,December 2023
+Ethiopia,Tigray,0.9709881,Very High,December 2023
+Gabon,Estuaire,0.24101394,Low,December 2023
+Gabon,Haut-Ogooue,0.15791117,Very Low,December 2023
+Gabon,Moyen-Ogooue,0.18071438,Very Low,December 2023
+Gabon,Ngounie,0.13402225,Very Low,December 2023
+Gabon,Nyanga,0.06632893,Very Low,December 2023
+Gabon,Ogooue-Ivindo,0.057334308,Very Low,December 2023
+Gabon,Ogooue-Lolo,0.1150965,Very Low,December 2023
+Gabon,Ogooue-Maritime,0.096357465,Very Low,December 2023
+Gabon,Woleu-Ntem,0.073280424,Very Low,December 2023
+Gambia,Banjul,0.11274767,Very Low,December 2023
+Gambia,Basse,0.052364033,Very Low,December 2023
+Gambia,Brikama,0.12167909,Very Low,December 2023
+Gambia,Central River,0.022630714,Very Low,December 2023
+Gambia,Janjanbureh,0.036133092,Very Low,December 2023
+Gambia,Kanifing,0.10930724,Very Low,December 2023
+Gambia,Kerewan,0.054976296,Very Low,December 2023
+Gambia,Mansakonko,0.012023642,Very Low,December 2023
+Ghana,Ahafo,0.13853654,Very Low,December 2023
+Ghana,Ashanti,0.6692124,High,December 2023
+Ghana,Bono,0.17183094,Very Low,December 2023
+Ghana,Bono East,0.36207122,Low,December 2023
+Ghana,Central,0.77461314,High,December 2023
+Ghana,Eastern,0.6317366,High,December 2023
+Ghana,Greater Accra,0.6616537,High,December 2023
+Ghana,North East,0.540177,Moderate,December 2023
+Ghana,Northern,0.6191901,High,December 2023
+Ghana,Oti,0.13297354,Very Low,December 2023
+Ghana,Savannah,0.24007969,Low,December 2023
+Ghana,Upper East,0.5351899,Moderate,December 2023
+Ghana,Upper West,0.25007397,Low,December 2023
+Ghana,Volta,0.50877196,Moderate,December 2023
+Ghana,Western,0.60597444,High,December 2023
+Ghana,Western North,0.46485686,Moderate,December 2023
+Guinea,Boke,0.5385592,Moderate,December 2023
+Guinea,Conakry,0.92003495,Very High,December 2023
+Guinea,Faranah,0.21234334,Low,December 2023
+Guinea,Kankan,0.96049887,Very High,December 2023
+Guinea,Kindia,0.62988347,High,December 2023
+Guinea,Labe,0.48573318,Moderate,December 2023
+Guinea,Mamou,0.12591162,Very Low,December 2023
+Guinea,Nzerekore,0.56738657,Moderate,December 2023
+Guinea-Bissau,Bafata,0.039900877,Very Low,December 2023
+Guinea-Bissau,Biombo,0.10915673,Very Low,December 2023
+Guinea-Bissau,Bissau,0.3440153,Low,December 2023
+Guinea-Bissau,Bolama,0.012023642,Very Low,December 2023
+Guinea-Bissau,Cacheu,0.06408706,Very Low,December 2023
+Guinea-Bissau,Oio,0.07233145,Very Low,December 2023
+Guinea-Bissau,Quinara,0.03022196,Very Low,December 2023
+Guinea-Bissau,Tombali,0.1483522,Very Low,December 2023
+Ivory Coast,Abidjan,0.6588662,High,December 2023
+Ivory Coast,Bas-Sassandra,0.11259064,Very Low,December 2023
+Ivory Coast,Comoe,0.0998975,Very Low,December 2023
+Ivory Coast,Denguele,0.12311045,Very Low,December 2023
+Ivory Coast,Goh-Djiboua,0.29208308,Low,December 2023
+Ivory Coast,Lacs,0.19867119,Very Low,December 2023
+Ivory Coast,Lagunes,0.30620727,Low,December 2023
+Ivory Coast,Montagnes,0.28806397,Low,December 2023
+Ivory Coast,Sassandra-Marahoue,0.10658105,Very Low,December 2023
+Ivory Coast,Savanes,0.24271221,Low,December 2023
+Ivory Coast,Vallee du Bandama,0.11673769,Very Low,December 2023
+Ivory Coast,Woroba,0.10657231,Very Low,December 2023
+Ivory Coast,Yamoussoukro,0.073582664,Very Low,December 2023
+Ivory Coast,Zanzan,0.28950173,Low,December 2023
+Kenya,Baringo,0.8210732,Very High,December 2023
+Kenya,Bomet,0.42127344,Moderate,December 2023
+Kenya,Bungoma,0.5648607,Moderate,December 2023
+Kenya,Busia,0.47586116,Moderate,December 2023
+Kenya,Elgeyo Marakwet,0.587783,Moderate,December 2023
+Kenya,Embu,0.4461734,Moderate,December 2023
+Kenya,Garissa,0.9579841,Very High,December 2023
+Kenya,Homa Bay,0.6152161,High,December 2023
+Kenya,Isiolo,0.6570378,High,December 2023
+Kenya,Kajiado,0.640859,High,December 2023
+Kenya,Kakamega,0.66088253,High,December 2023
+Kenya,Kericho,0.5572662,Moderate,December 2023
+Kenya,Kiambu,0.9574446,Very High,December 2023
+Kenya,Kilifi,0.6064754,High,December 2023
+Kenya,Kirinyaga,0.49746364,Moderate,December 2023
+Kenya,Kisii,0.69407564,High,December 2023
+Kenya,Kisumu,0.9736235,Very High,December 2023
+Kenya,Kitui,0.6541432,High,December 2023
+Kenya,Kwale,0.5573455,Moderate,December 2023
+Kenya,Laikipia,0.7730864,High,December 2023
+Kenya,Lamu,0.947656,Very High,December 2023
+Kenya,Machakos,0.74023765,High,December 2023
+Kenya,Makueni,0.3415503,Low,December 2023
+Kenya,Mandera,0.9082909,Very High,December 2023
+Kenya,Marsabit,0.6692519,High,December 2023
+Kenya,Meru,0.86247456,Very High,December 2023
+Kenya,Migori,0.33020157,Low,December 2023
+Kenya,Mombasa,0.6538192,High,December 2023
+Kenya,Muranga,0.62886906,High,December 2023
+Kenya,Nairobi,0.99940133,Very High,December 2023
+Kenya,Nakuru,0.83582675,Very High,December 2023
+Kenya,Nandi,0.30990487,Low,December 2023
+Kenya,Narok,0.5969253,Moderate,December 2023
+Kenya,Nyamira,0.62002957,High,December 2023
+Kenya,Nyandarua,0.16493934,Very Low,December 2023
+Kenya,Nyeri,0.5086348,Moderate,December 2023
+Kenya,Samburu,0.93263245,Very High,December 2023
+Kenya,Siaya,0.5750848,Moderate,December 2023
+Kenya,Taita Taveta,0.28864154,Low,December 2023
+Kenya,Tana River,0.255858,Low,December 2023
+Kenya,Tharaka-Nithi,0.5401241,Moderate,December 2023
+Kenya,Trans Nzoia,0.73576874,High,December 2023
+Kenya,Turkana,0.955652,Very High,December 2023
+Kenya,Uasin Gishu,0.6925752,High,December 2023
+Kenya,Vihiga,0.29196218,Low,December 2023
+Kenya,Wajir,0.2893885,Low,December 2023
+Kenya,West Pokot,0.92331636,Very High,December 2023
+Lesotho,Berea,0.052364033,Very Low,December 2023
+Lesotho,Butha-Buthe,0.052364033,Very Low,December 2023
+Lesotho,Leribe,0.052990902,Very Low,December 2023
+Lesotho,Mafeteng,0.06632893,Very Low,December 2023
+Lesotho,Maseru,0.17450212,Very Low,December 2023
+Lesotho,Mohale's Hoek,0.04106723,Very Low,December 2023
+Lesotho,Mokhotlong,0.05733791,Very Low,December 2023
+Lesotho,Qacha's Nek,0.049557816,Very Low,December 2023
+Lesotho,Quthing,0.054666597,Very Low,December 2023
+Liberia,Bomi,0.020312387,Very Low,December 2023
+Liberia,Bong,0.052364033,Very Low,December 2023
+Liberia,Gbarpolu,0.020312387,Very Low,December 2023
+Liberia,Grand Bassa,0.12805052,Very Low,December 2023
+Liberia,Grand Cape Mount,0.053974655,Very Low,December 2023
+Liberia,Grand Gedeh,0.06957393,Very Low,December 2023
+Liberia,Grand Kru,0.036133092,Very Low,December 2023
+Liberia,Lofa,0.054063648,Very Low,December 2023
+Liberia,Margibi,0.052364033,Very Low,December 2023
+Liberia,Maryland,0.06011475,Very Low,December 2023
+Liberia,Montserrado,0.54115885,Moderate,December 2023
+Liberia,Nimba,0.22248022,Low,December 2023
+Liberia,River Gee,0.01541721,Very Low,December 2023
+Liberia,Rivercess,0.052364033,Very Low,December 2023
+Liberia,Sinoe,0.1137332,Very Low,December 2023
+Libya,East,0.834357,Very High,December 2023
+Libya,South,0.35707545,Low,December 2023
+Libya,West,0.9798554,Very High,December 2023
+Madagascar,Alaotra Mangoro,0.5433746,Moderate,December 2023
+Madagascar,Amoron I Mania,0.4692838,Moderate,December 2023
+Madagascar,Analamanga,0.99983585,Very High,December 2023
+Madagascar,Analanjirofo,0.12734345,Very Low,December 2023
+Madagascar,Androy,0.541115,Moderate,December 2023
+Madagascar,Anosy,0.51746124,Moderate,December 2023
+Madagascar,Atsimo Andrefana,0.52572525,Moderate,December 2023
+Madagascar,Atsimo Atsinanana,0.53721714,Moderate,December 2023
+Madagascar,Atsinanana,0.2871379,Low,December 2023
+Madagascar,Betsiboka,0.63991016,High,December 2023
+Madagascar,Boeny,0.46480623,Moderate,December 2023
+Madagascar,Bongolava,0.60423857,High,December 2023
+Madagascar,Diana,0.15243463,Very Low,December 2023
+Madagascar,Haute Matsiatra,0.42505628,Moderate,December 2023
+Madagascar,Ihorombe,0.39528653,Low,December 2023
+Madagascar,Itasy,0.48470438,Moderate,December 2023
+Madagascar,Melaky,0.5104304,Moderate,December 2023
+Madagascar,Menabe,0.746036,High,December 2023
+Madagascar,Sava,0.23569645,Low,December 2023
+Madagascar,Sofia,0.69767773,High,December 2023
+Madagascar,Vakinankaratra,0.6563013,High,December 2023
+Madagascar,Vatovavy Fitovinany,0.20091319,Low,December 2023
+Malawi,Central,0.81687826,Very High,December 2023
+Malawi,Northern,0.6869534,High,December 2023
+Malawi,Southern,0.8143289,Very High,December 2023
+Mali,Bamako,0.62073445,High,December 2023
+Mali,Gao,0.9998136,Very High,December 2023
+Mali,Kayes,0.6232208,High,December 2023
+Mali,Kidal,0.73562944,High,December 2023
+Mali,Koulikoro,0.9599367,Very High,December 2023
+Mali,Menaka,0.99140924,Very High,December 2023
+Mali,Mopti,0.99925023,Very High,December 2023
+Mali,Segou,0.99920493,Very High,December 2023
+Mali,Sikasso,0.75742626,High,December 2023
+Mali,Tombouctou,0.99967504,Very High,December 2023
+Mauritania,Adrar,0.13207367,Very Low,December 2023
+Mauritania,Assaba,0.10942123,Very Low,December 2023
+Mauritania,Brakna,0.091228046,Very Low,December 2023
+Mauritania,Dakhlet Nouadhibou,0.18611875,Very Low,December 2023
+Mauritania,Gorgol,0.096397,Very Low,December 2023
+Mauritania,Guidimakha,0.012023642,Very Low,December 2023
+Mauritania,Hodh Ech Chargi,0.35202274,Low,December 2023
+Mauritania,Hodh El Gharbi,0.06632893,Very Low,December 2023
+Mauritania,Inchiri,0.08030649,Very Low,December 2023
+Mauritania,Nouakchott,0.67650276,High,December 2023
+Mauritania,Tagant,0.02115906,Very Low,December 2023
+Mauritania,Tiris Zemmour,0.1907684,Very Low,December 2023
+Mauritania,Trarza,0.12638561,Very Low,December 2023
+Mauritius,Agalega,0.067058556,Very Low,December 2023
+Mauritius,Black River,0.10818722,Very Low,December 2023
+Mauritius,Flacq,0.14912458,Very Low,December 2023
+Mauritius,Grand Port,0.11561384,Very Low,December 2023
+Mauritius,Moka,0.14619046,Very Low,December 2023
+Mauritius,Pamplemousses,0.09799708,Very Low,December 2023
+Mauritius,Plaines Wilhems,0.18536867,Very Low,December 2023
+Mauritius,Port Louis,0.23994753,Low,December 2023
+Mauritius,Riviere du Rempart,0.11660364,Very Low,December 2023
+Mauritius,Rodriguez,0.07905082,Very Low,December 2023
+Mauritius,Savanne,0.089284666,Very Low,December 2023
+Mayotte,Acoua,0.02115906,Very Low,December 2023
+Mayotte,Bandraboua,0.131965,Very Low,December 2023
+Mayotte,Bandrele,0.09809271,Very Low,December 2023
+Mayotte,Boueni,0.08642543,Very Low,December 2023
+Mayotte,Chiconi,0.031610046,Very Low,December 2023
+Mayotte,Chirongui,0.07235164,Very Low,December 2023
+Mayotte,Dembeni,0.052364033,Very Low,December 2023
+Mayotte,Dzaoudzi,0.017601255,Very Low,December 2023
+Mayotte,Kani Keli,0.036133092,Very Low,December 2023
+Mayotte,Koungou,0.1190778,Very Low,December 2023
+Mayotte,Mamoudzou,0.37461585,Low,December 2023
+Mayotte,Mtsamboro,0.012023642,Very Low,December 2023
+Mayotte,Mtsangamouji,0.054976296,Very Low,December 2023
+Mayotte,Ouangani,0.08669963,Very Low,December 2023
+Mayotte,Pamandzi,0.096674055,Very Low,December 2023
+Mayotte,Sada,0.03872125,Very Low,December 2023
+Mayotte,Tsingoni,0.052364033,Very Low,December 2023
+Morocco,Beni Mellal-Khenifra,0.19834194,Very Low,December 2023
+Morocco,Casablanca-Settat,0.22573999,Low,December 2023
+Morocco,Draa-Tafilalet,0.10151475,Very Low,December 2023
+Morocco,Eddakhla-Oued Eddahab,0.23111242,Low,December 2023
+Morocco,Fes-Meknes,0.20779645,Low,December 2023
+Morocco,Guelmim-Oued Noun,0.21644549,Low,December 2023
+Morocco,Laayoune-Sakia El Hamra,0.42193264,Moderate,December 2023
+Morocco,Marrakech-Safi,0.1702665,Very Low,December 2023
+Morocco,Oriental,0.20274545,Low,December 2023
+Morocco,Rabat-Sale-Kenitra,0.29635274,Low,December 2023
+Morocco,Souss-Massa,0.32861075,Low,December 2023
+Morocco,Tanger-Tetouan-Al Hoceima,0.720507,High,December 2023
+Mozambique,Cabo Delgado,0.99959487,Very High,December 2023
+Mozambique,Gaza,0.09214625,Very Low,December 2023
+Mozambique,Inhambane,0.1090944,Very Low,December 2023
+Mozambique,Manica,0.10293849,Very Low,December 2023
+Mozambique,Maputo,0.09848033,Very Low,December 2023
+Mozambique,Maputo City,0.33450937,Low,December 2023
+Mozambique,Nampula,0.5309121,Moderate,December 2023
+Mozambique,Niassa,0.06760427,Very Low,December 2023
+Mozambique,Sofala,0.2694423,Low,December 2023
+Mozambique,Tete,0.3128881,Low,December 2023
+Mozambique,Zambezia,0.28489238,Low,December 2023
+Namibia,Erongo,0.18876703,Very Low,December 2023
+Namibia,Hardap,0.03493127,Very Low,December 2023
+Namibia,Karas,0.23825292,Low,December 2023
+Namibia,Kavango East,0.17739324,Very Low,December 2023
+Namibia,Kavango West,0.03263964,Very Low,December 2023
+Namibia,Khomas,0.1812267,Very Low,December 2023
+Namibia,Kunene,0.052364033,Very Low,December 2023
+Namibia,Ohangwena,0.064474344,Very Low,December 2023
+Namibia,Omaheke,0.031017786,Very Low,December 2023
+Namibia,Omusati,0.09345852,Very Low,December 2023
+Namibia,Oshana,0.18777414,Very Low,December 2023
+Namibia,Oshikoto,0.09128517,Very Low,December 2023
+Namibia,Otjozondjupa,0.08471327,Very Low,December 2023
+Namibia,Zambezi,0.190298,Very Low,December 2023
+Niger,Agadez,0.7613613,High,December 2023
+Niger,Diffa,0.97652686,Very High,December 2023
+Niger,Dosso,0.5911557,Moderate,December 2023
+Niger,Maradi,0.91788954,Very High,December 2023
+Niger,Niamey,0.20080769,Low,December 2023
+Niger,Tahoua,0.79219586,High,December 2023
+Niger,Tillaberi,0.99975175,Very High,December 2023
+Niger,Zinder,0.23200026,Low,December 2023
+Nigeria,Abia,0.85265183,Very High,December 2023
+Nigeria,Adamawa,0.8794338,Very High,December 2023
+Nigeria,Akwa Ibom,0.8317637,Very High,December 2023
+Nigeria,Anambra,0.99959594,Very High,December 2023
+Nigeria,Bauchi,0.89996636,Very High,December 2023
+Nigeria,Bayelsa,0.7359209,High,December 2023
+Nigeria,Benue,0.9990576,Very High,December 2023
+Nigeria,Borno,0.9997687,Very High,December 2023
+Nigeria,Cross River,0.9066646,Very High,December 2023
+Nigeria,Delta,0.9910725,Very High,December 2023
+Nigeria,Ebonyi,0.96229553,Very High,December 2023
+Nigeria,Edo,0.9796862,Very High,December 2023
+Nigeria,Ekiti,0.6831341,High,December 2023
+Nigeria,Enugu,0.9988262,Very High,December 2023
+Nigeria,Federal Capital Territory,0.9983069,Very High,December 2023
+Nigeria,Gombe,0.38908002,Low,December 2023
+Nigeria,Imo,0.99453616,Very High,December 2023
+Nigeria,Jigawa,0.52014154,Moderate,December 2023
+Nigeria,Kaduna,0.9995845,Very High,December 2023
+Nigeria,Kano,0.7665854,High,December 2023
+Nigeria,Katsina,0.9994547,Very High,December 2023
+Nigeria,Kebbi,0.7388793,High,December 2023
+Nigeria,Kogi,0.97748625,Very High,December 2023
+Nigeria,Kwara,0.96756816,Very High,December 2023
+Nigeria,Lagos,0.99794537,Very High,December 2023
+Nigeria,Nassarawa,0.9161046,Very High,December 2023
+Nigeria,Niger,0.9988745,Very High,December 2023
+Nigeria,Ogun,0.9741383,Very High,December 2023
+Nigeria,Ondo,0.94085956,Very High,December 2023
+Nigeria,Osun,0.9927752,Very High,December 2023
+Nigeria,Oyo,0.7806123,High,December 2023
+Nigeria,Plateau,0.99828005,Very High,December 2023
+Nigeria,Rivers,0.9994972,Very High,December 2023
+Nigeria,Sokoto,0.99729544,Very High,December 2023
+Nigeria,Taraba,0.9304386,Very High,December 2023
+Nigeria,Yobe,0.92511237,Very High,December 2023
+Nigeria,Zamfara,0.99970514,Very High,December 2023
+Republic of Congo,Bouenza,0.07470454,Very Low,December 2023
+Republic of Congo,Brazzaville,0.25025234,Low,December 2023
+Republic of Congo,Cuvette,0.022630714,Very Low,December 2023
+Republic of Congo,Kouilou,0.05604646,Very Low,December 2023
+Republic of Congo,Lekoumou,0.022630714,Very Low,December 2023
+Republic of Congo,Likouala,0.054976296,Very Low,December 2023
+Republic of Congo,Niari,0.052364033,Very Low,December 2023
+Republic of Congo,Plateaux,0.049895782,Very Low,December 2023
+Republic of Congo,Pointe-Noire,0.1143698,Very Low,December 2023
+Republic of Congo,Pool,0.07168559,Very Low,December 2023
+Republic of Congo,Sangha,0.012023642,Very Low,December 2023
+Reunion,Saint-Benoit,0.2431723,Low,December 2023
+Reunion,Saint-Denis,0.4966052,Moderate,December 2023
+Reunion,Saint-Paul,0.4371387,Moderate,December 2023
+Reunion,Saint-Pierre,0.3594784,Low,December 2023
+Rwanda,East,0.08286144,Very Low,December 2023
+Rwanda,Kigali City,0.21060851,Low,December 2023
+Rwanda,North,0.060705118,Very Low,December 2023
+Rwanda,South,0.12038558,Very Low,December 2023
+Rwanda,West,0.2278878,Low,December 2023
+"Saint Helena, Ascension and Tristan da Cunha",Saint Helena,0.012023642,Very Low,December 2023
+Sao Tome and Principe,Agua Grande,0.18388313,Very Low,December 2023
+Sao Tome and Principe,Lemba,0.05479641,Very Low,December 2023
+Sao Tome and Principe,Lobata,0.02115906,Very Low,December 2023
+Sao Tome and Principe,Me-Zochi,0.012023642,Very Low,December 2023
+Sao Tome and Principe,Principe,0.04106723,Very Low,December 2023
+Senegal,Dakar,0.9211312,Very High,December 2023
+Senegal,Diourbel,0.16037793,Very Low,December 2023
+Senegal,Fatick,0.06372368,Very Low,December 2023
+Senegal,Kaffrine,0.056284793,Very Low,December 2023
+Senegal,Kaolack,0.0842775,Very Low,December 2023
+Senegal,Kedougou,0.34593275,Low,December 2023
+Senegal,Kolda,0.18082085,Very Low,December 2023
+Senegal,Louga,0.14033702,Very Low,December 2023
+Senegal,Matam,0.07412306,Very Low,December 2023
+Senegal,Saint Louis,0.2488304,Low,December 2023
+Senegal,Sedhiou,0.38138732,Low,December 2023
+Senegal,Tambacounda,0.09733023,Very Low,December 2023
+Senegal,Thies,0.6171113,High,December 2023
+Senegal,Ziguinchor,0.56277364,Moderate,December 2023
+Seychelles,Baie Lazare,0.012023642,Very Low,December 2023
+Seychelles,Baie Sainte-Anne,0.02115906,Very Low,December 2023
+Seychelles,Bel Air,0.037119057,Very Low,December 2023
+Seychelles,Mont Fleuri,0.012023642,Very Low,December 2023
+Seychelles,Port Glaud,0.012023642,Very Low,December 2023
+Sierra Leone,Eastern,0.13140592,Very Low,December 2023
+Sierra Leone,Northern,0.25194427,Low,December 2023
+Sierra Leone,Northwestern,0.15274301,Very Low,December 2023
+Sierra Leone,Southern,0.10104704,Very Low,December 2023
+Sierra Leone,Western,0.49791837,Moderate,December 2023
+Somalia,Awdal,0.23117065,Low,December 2023
+Somalia,Bakool,0.9858316,Very High,December 2023
+Somalia,Banadir,0.9997702,Very High,December 2023
+Somalia,Bari,0.9633716,Very High,December 2023
+Somalia,Bay,0.99931014,Very High,December 2023
+Somalia,Galgaduud,0.9993419,Very High,December 2023
+Somalia,Gedo,0.98908246,Very High,December 2023
+Somalia,Hiraan,0.99969065,Very High,December 2023
+Somalia,Lower Juba,0.9994524,Very High,December 2023
+Somalia,Lower Shabelle,0.99888104,Very High,December 2023
+Somalia,Middle Juba,0.6932724,High,December 2023
+Somalia,Middle Shabelle,0.9999038,Very High,December 2023
+Somalia,Mudug,0.9987429,Very High,December 2023
+Somalia,Nugaal,0.8585072,Very High,December 2023
+Somalia,Sanaag,0.5925362,Moderate,December 2023
+Somalia,Sool,0.91172,Very High,December 2023
+Somalia,Togdheer,0.79542196,High,December 2023
+Somalia,Woqooyi Galbeed,0.50727946,Moderate,December 2023
+South Africa,Eastern Cape,0.99043894,Very High,December 2023
+South Africa,Free State,0.5962221,Moderate,December 2023
+South Africa,Gauteng,0.9993742,Very High,December 2023
+South Africa,KwaZulu-Natal,0.999286,Very High,December 2023
+South Africa,Limpopo,0.98706144,Very High,December 2023
+South Africa,Mpumalanga,0.9059282,Very High,December 2023
+South Africa,North West,0.69912344,High,December 2023
+South Africa,Northern Cape,0.7253464,High,December 2023
+South Africa,Western Cape,0.99737036,Very High,December 2023
+South Sudan,Central Equatoria,0.9994905,Very High,December 2023
+South Sudan,Eastern Equatoria,0.99954456,Very High,December 2023
+South Sudan,Jonglei,0.99909246,Very High,December 2023
+South Sudan,Lakes,0.99658513,Very High,December 2023
+South Sudan,Northern Bahr el Ghazal,0.27748835,Low,December 2023
+South Sudan,Unity,0.9797564,Very High,December 2023
+South Sudan,Upper Nile,0.9894382,Very High,December 2023
+South Sudan,Warrap,0.9987909,Very High,December 2023
+South Sudan,Western Bahr el Ghazal,0.8111675,Very High,December 2023
+South Sudan,Western Equatoria,0.9838283,Very High,December 2023
+Sudan,Abyei,0.9791539,Very High,December 2023
+Sudan,Al Jazirah,0.95136505,Very High,December 2023
+Sudan,Blue Nile,0.903812,Very High,December 2023
+Sudan,Central Darfur,0.9988267,Very High,December 2023
+Sudan,East Darfur,0.57372564,Moderate,December 2023
+Sudan,Gedaref,0.63531387,High,December 2023
+Sudan,Kassala,0.57394636,Moderate,December 2023
+Sudan,Khartoum,0.9993462,Very High,December 2023
+Sudan,North Darfur,0.99941695,Very High,December 2023
+Sudan,North Kordofan,0.99591994,Very High,December 2023
+Sudan,Northern,0.56079704,Moderate,December 2023
+Sudan,Red Sea,0.7662826,High,December 2023
+Sudan,River Nile,0.6024205,High,December 2023
+Sudan,Sennar,0.21629271,Low,December 2023
+Sudan,South Darfur,0.9994623,Very High,December 2023
+Sudan,South Kordofan,0.9934255,Very High,December 2023
+Sudan,West Darfur,0.99861455,Very High,December 2023
+Sudan,West Kordofan,0.98426914,Very High,December 2023
+Sudan,White Nile,0.57474,Moderate,December 2023
+Tanzania,Arusha,0.18117818,Very Low,December 2023
+Tanzania,Dar es Salaam,0.2280025,Low,December 2023
+Tanzania,Dodoma,0.021903537,Very Low,December 2023
+Tanzania,Geita,0.1821884,Very Low,December 2023
+Tanzania,Iringa,0.055118546,Very Low,December 2023
+Tanzania,Kagera,0.021903537,Very Low,December 2023
+Tanzania,Kaskazini Pemba,0.03022196,Very Low,December 2023
+Tanzania,Kaskazini Unguja,0.03022196,Very Low,December 2023
+Tanzania,Katavi,0.05479641,Very Low,December 2023
+Tanzania,Kigoma,0.4806931,Moderate,December 2023
+Tanzania,Kilimanjaro,0.05604646,Very Low,December 2023
+Tanzania,Kusini Pemba,0.022630714,Very Low,December 2023
+Tanzania,Kusini Unguja,0.052364033,Very Low,December 2023
+Tanzania,Lindi,0.06814024,Very Low,December 2023
+Tanzania,Manyara,0.068651736,Very Low,December 2023
+Tanzania,Mara,0.074543536,Very Low,December 2023
+Tanzania,Mbeya,0.13453053,Very Low,December 2023
+Tanzania,Mjini Magharibi,0.04106723,Very Low,December 2023
+Tanzania,Morogoro,0.05604646,Very Low,December 2023
+Tanzania,Mtwara,0.05604646,Very Low,December 2023
+Tanzania,Mwanza,0.06760427,Very Low,December 2023
+Tanzania,Njombe,0.03872125,Very Low,December 2023
+Tanzania,Pwani,0.05604646,Very Low,December 2023
+Tanzania,Rukwa,0.06836491,Very Low,December 2023
+Tanzania,Ruvuma,0.050775785,Very Low,December 2023
+Tanzania,Shinyanga,0.052364033,Very Low,December 2023
+Tanzania,Simiyu,0.01541721,Very Low,December 2023
+Tanzania,Singida,0.01541721,Very Low,December 2023
+Tanzania,Songwe,0.04106723,Very Low,December 2023
+Tanzania,Tabora,0.054716725,Very Low,December 2023
+Tanzania,Tanga,0.053291004,Very Low,December 2023
+Togo,Centrale,0.05604646,Very Low,December 2023
+Togo,Kara,0.054976296,Very Low,December 2023
+Togo,Maritime,0.30595562,Low,December 2023
+Togo,Plateaux,0.105958134,Very Low,December 2023
+Togo,Savanes,0.61207813,High,December 2023
+Tunisia,Ariana,0.09743991,Very Low,December 2023
+Tunisia,Beja,0.14961053,Very Low,December 2023
+Tunisia,Ben Arous,0.07808924,Very Low,December 2023
+Tunisia,Bizerte,0.17444223,Very Low,December 2023
+Tunisia,Gabes,0.16900718,Very Low,December 2023
+Tunisia,Gafsa,0.15950729,Very Low,December 2023
+Tunisia,Jendouba,0.12776162,Very Low,December 2023
+Tunisia,Kairouan,0.26564384,Low,December 2023
+Tunisia,Kasserine,0.5577444,Moderate,December 2023
+Tunisia,Kebili,0.24226254,Low,December 2023
+Tunisia,Kef,0.18273076,Very Low,December 2023
+Tunisia,Mahdia,0.13110879,Very Low,December 2023
+Tunisia,Manubah,0.1887925,Very Low,December 2023
+Tunisia,Medenine,0.33346784,Low,December 2023
+Tunisia,Monastir,0.11285794,Very Low,December 2023
+Tunisia,Nabeul,0.1986608,Very Low,December 2023
+Tunisia,Sfax,0.33331582,Low,December 2023
+Tunisia,Sidi Bouzid,0.31111813,Low,December 2023
+Tunisia,Siliana,0.11546851,Very Low,December 2023
+Tunisia,Sousse,0.1567781,Very Low,December 2023
+Tunisia,Tataouine,0.16669543,Very Low,December 2023
+Tunisia,Tozeur,0.12855417,Very Low,December 2023
+Tunisia,Tunis,0.2610101,Low,December 2023
+Tunisia,Zaghouan,0.05305981,Very Low,December 2023
+Uganda,Abim,0.08669963,Very Low,December 2023
+Uganda,Adjumani,0.2583075,Low,December 2023
+Uganda,Agago,0.6693419,High,December 2023
+Uganda,Alebtong,0.052364033,Very Low,December 2023
+Uganda,Amolatar,0.06710966,Very Low,December 2023
+Uganda,Amudat,0.114338875,Very Low,December 2023
+Uganda,Amuria,0.039900877,Very Low,December 2023
+Uganda,Amuru,0.06011475,Very Low,December 2023
+Uganda,Apac,0.10403998,Very Low,December 2023
+Uganda,Arua,0.20911744,Low,December 2023
+Uganda,Budaka,0.05479641,Very Low,December 2023
+Uganda,Bududa,0.05604646,Very Low,December 2023
+Uganda,Bugiri,0.054976296,Very Low,December 2023
+Uganda,Bugweri,0.053974655,Very Low,December 2023
+Uganda,Buhweju,0.020312387,Very Low,December 2023
+Uganda,Buikwe,0.21620622,Low,December 2023
+Uganda,Bukedea,0.067120366,Very Low,December 2023
+Uganda,Bukomansimbi,0.039900877,Very Low,December 2023
+Uganda,Bukwo,0.20335676,Low,December 2023
+Uganda,Bulambuli,0.06632893,Very Low,December 2023
+Uganda,Buliisa,0.03022196,Very Low,December 2023
+Uganda,Bundibugyo,0.054976296,Very Low,December 2023
+Uganda,Bunyangabu,0.11002051,Very Low,December 2023
+Uganda,Bushenyi,0.14651784,Very Low,December 2023
+Uganda,Busia,0.12366552,Very Low,December 2023
+Uganda,Butaleja,0.054976296,Very Low,December 2023
+Uganda,Butambala,0.04106723,Very Low,December 2023
+Uganda,Butebo,0.1381869,Very Low,December 2023
+Uganda,Buvuma,0.05604646,Very Low,December 2023
+Uganda,Buyende,0.12456847,Very Low,December 2023
+Uganda,Dokolo,0.08642543,Very Low,December 2023
+Uganda,Gomba,0.052364033,Very Low,December 2023
+Uganda,Gulu,0.2171526,Low,December 2023
+Uganda,Hoima,0.6033423,High,December 2023
+Uganda,Ibanda,0.08669963,Very Low,December 2023
+Uganda,Iganga,0.18245032,Very Low,December 2023
+Uganda,Isingiro,0.20220195,Low,December 2023
+Uganda,Jinja,0.31842843,Low,December 2023
+Uganda,Kaabong,0.3151048,Low,December 2023
+Uganda,Kabale,0.15303409,Very Low,December 2023
+Uganda,Kabarole,0.22614689,Low,December 2023
+Uganda,Kaberamaido,0.08669963,Very Low,December 2023
+Uganda,Kagadi,0.06632893,Very Low,December 2023
+Uganda,Kakumiro,0.052364033,Very Low,December 2023
+Uganda,Kalaki,0.017601255,Very Low,December 2023
+Uganda,Kalangala,0.054976296,Very Low,December 2023
+Uganda,Kaliro,0.18650983,Very Low,December 2023
+Uganda,Kalungu,0.1140255,Very Low,December 2023
+Uganda,Kampala,0.79960334,High,December 2023
+Uganda,Kamuli,0.21532185,Low,December 2023
+Uganda,Kamwenge,0.057830263,Very Low,December 2023
+Uganda,Kanungu,0.080454655,Very Low,December 2023
+Uganda,Kapchorwa,0.110360526,Very Low,December 2023
+Uganda,Kapelebyong,0.052364033,Very Low,December 2023
+Uganda,Karenga,0.12896644,Very Low,December 2023
+Uganda,Kasese,0.17389812,Very Low,December 2023
+Uganda,Kassanda,0.05604646,Very Low,December 2023
+Uganda,Katakwi,0.13973102,Very Low,December 2023
+Uganda,Kayunga,0.32497883,Low,December 2023
+Uganda,Kazo,0.054976296,Very Low,December 2023
+Uganda,Kibaale,0.052364033,Very Low,December 2023
+Uganda,Kiboga,0.08050565,Very Low,December 2023
+Uganda,Kibuku,0.06408706,Very Low,December 2023
+Uganda,Kikuube,0.35033697,Low,December 2023
+Uganda,Kiruhura,0.052364033,Very Low,December 2023
+Uganda,Kiryandongo,0.052364033,Very Low,December 2023
+Uganda,Kisoro,0.2720224,Low,December 2023
+Uganda,Kitagwenda,0.0626197,Very Low,December 2023
+Uganda,Kitgum,0.28110108,Low,December 2023
+Uganda,Koboko,0.16229442,Very Low,December 2023
+Uganda,Kole,0.052364033,Very Low,December 2023
+Uganda,Kotido,0.6071139,High,December 2023
+Uganda,Kumi,0.08736864,Very Low,December 2023
+Uganda,Kwania,0.052364033,Very Low,December 2023
+Uganda,Kween,0.07743134,Very Low,December 2023
+Uganda,Kyankwanzi,0.088329606,Very Low,December 2023
+Uganda,Kyegegwa,0.054976296,Very Low,December 2023
+Uganda,Kyenjojo,0.05604646,Very Low,December 2023
+Uganda,Kyotera,0.06749595,Very Low,December 2023
+Uganda,Lamwo,0.120715655,Very Low,December 2023
+Uganda,Lira,0.20603593,Low,December 2023
+Uganda,Luuka,0.054976296,Very Low,December 2023
+Uganda,Luwero,0.2541936,Low,December 2023
+Uganda,Lwengo,0.052364033,Very Low,December 2023
+Uganda,Lyantonde,0.052364033,Very Low,December 2023
+Uganda,Madi Okollo,0.03022196,Very Low,December 2023
+Uganda,Manafwa,0.020312387,Very Low,December 2023
+Uganda,Maracha,0.06011475,Very Low,December 2023
+Uganda,Masaka,0.15678847,Very Low,December 2023
+Uganda,Masindi,0.11702092,Very Low,December 2023
+Uganda,Mayuge,0.12176148,Very Low,December 2023
+Uganda,Mbale,0.18039991,Very Low,December 2023
+Uganda,Mbarara,0.13682453,Very Low,December 2023
+Uganda,Mitooma,0.06449382,Very Low,December 2023
+Uganda,Mityana,0.10920749,Very Low,December 2023
+Uganda,Moroto,0.48104495,Moderate,December 2023
+Uganda,Moyo,0.084545515,Very Low,December 2023
+Uganda,Mpigi,0.053156998,Very Low,December 2023
+Uganda,Mubende,0.08480792,Very Low,December 2023
+Uganda,Mukono,0.65299624,High,December 2023
+Uganda,Nabilatuk,0.19706775,Very Low,December 2023
+Uganda,Nakapiripirit,0.41115597,Moderate,December 2023
+Uganda,Nakaseke,0.19282451,Very Low,December 2023
+Uganda,Nakasongola,0.054976296,Very Low,December 2023
+Uganda,Namayingo,0.07270869,Very Low,December 2023
+Uganda,Namisindwa,0.15425198,Very Low,December 2023
+Uganda,Namutumba,0.04593832,Very Low,December 2023
+Uganda,Napak,0.25455424,Low,December 2023
+Uganda,Nebbi,0.11002051,Very Low,December 2023
+Uganda,Ngora,0.054666597,Very Low,December 2023
+Uganda,Ntoroko,0.12918147,Very Low,December 2023
+Uganda,Ntungamo,0.054976296,Very Low,December 2023
+Uganda,Nwoya,0.039900877,Very Low,December 2023
+Uganda,Obongi,0.05479641,Very Low,December 2023
+Uganda,Omoro,0.054976296,Very Low,December 2023
+Uganda,Otuke,0.13049898,Very Low,December 2023
+Uganda,Oyam,0.10222361,Very Low,December 2023
+Uganda,Pader,0.053291004,Very Low,December 2023
+Uganda,Pakwach,0.06578155,Very Low,December 2023
+Uganda,Pallisa,0.074507475,Very Low,December 2023
+Uganda,Rakai,0.05058816,Very Low,December 2023
+Uganda,Rubanda,0.08669963,Very Low,December 2023
+Uganda,Rubirizi,0.017601255,Very Low,December 2023
+Uganda,Rukiga,0.052990902,Very Low,December 2023
+Uganda,Rukungiri,0.121071436,Very Low,December 2023
+Uganda,Rwampara,0.022630714,Very Low,December 2023
+Uganda,Serere,0.054976296,Very Low,December 2023
+Uganda,Sheema,0.053974655,Very Low,December 2023
+Uganda,Sironko,0.104459055,Very Low,December 2023
+Uganda,Soroti,0.10849957,Very Low,December 2023
+Uganda,Ssembabule,0.086397365,Very Low,December 2023
+Uganda,Tororo,0.1542474,Very Low,December 2023
+Uganda,Wakiso,0.822338,Very High,December 2023
+Uganda,Yumbe,0.10289715,Very Low,December 2023
+Uganda,Zombo,0.11372513,Very Low,December 2023
+Zambia,Central,0.26027897,Low,December 2023
+Zambia,Copperbelt,0.2782029,Low,December 2023
+Zambia,Eastern,0.12659954,Very Low,December 2023
+Zambia,Luapula,0.08669963,Very Low,December 2023
+Zambia,Lusaka,0.43402976,Moderate,December 2023
+Zambia,Muchinga,0.1210358,Very Low,December 2023
+Zambia,North-Western,0.15638511,Very Low,December 2023
+Zambia,Northern,0.111162506,Very Low,December 2023
+Zambia,Southern,0.10618291,Very Low,December 2023
+Zambia,Western,0.06040794,Very Low,December 2023
+Zimbabwe,Bulawayo,0.46116582,Moderate,December 2023
+Zimbabwe,Harare,0.9054985,Very High,December 2023
+Zimbabwe,Manicaland,0.40154192,Moderate,December 2023
+Zimbabwe,Mashonaland Central,0.40946782,Moderate,December 2023
+Zimbabwe,Mashonaland East,0.35121197,Low,December 2023
+Zimbabwe,Mashonaland West,0.43790618,Moderate,December 2023
+Zimbabwe,Masvingo,0.7083763,High,December 2023
+Zimbabwe,Matabeleland North,0.23439015,Low,December 2023
+Zimbabwe,Matabeleland South,0.49934688,Moderate,December 2023
+Zimbabwe,Midlands,0.58100957,Moderate,December 2023
+eSwatini,Hhohho,0.78488696,High,December 2023
+eSwatini,Lubombo,0.2798105,Low,December 2023
+eSwatini,Manzini,0.7021607,High,December 2023
+eSwatini,Shiselweni,0.523383,Moderate,December 2023

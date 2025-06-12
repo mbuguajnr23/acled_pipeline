@@ -7,8 +7,7 @@ from datetime import datetime
 import logging
 
 # Import our modules
-# Ensure these modules are in the same directory as this script,
-# or the Python path is set up to find them.
+
 from acled_feature_engineering import prepare_acled_data
 from acled_spatial_model import train_spatial_model # Contains add_spatial_features too
 from acled_prediction_visualization import visualize_conflict_risk
@@ -93,7 +92,6 @@ def run_complete_pipeline(
         # --- Step 1: Data preparation and feature engineering ---
         logger.info("--- STEP 1: Data preparation and feature engineering ---")
         # prepare_acled_data should save its output to prepared_data_csv_path
-        # We need to modify prepare_acled_data to accept an output_path argument
        
 
         # Ensure raw_acled_file_path is absolute or resolvable from current context
@@ -122,8 +120,7 @@ def run_complete_pipeline(
             data_path=prepared_data_csv_path, 
             shapefile_path=abs_shapefile_path,
             output_model_path=spatial_model_path, 
-            output_charts_dir=charts_dir        # New arg for train_spatial_model
-        )
+            output_charts_dir=charts_dir       
         if not model_results or 'model' not in model_results:
             logger.error("Spatial model training failed or did not return results. Exiting.")
             return
@@ -134,22 +131,21 @@ def run_complete_pipeline(
         # visualize_conflict_risk needs to be adapted to save charts to charts_dir
         abs_admin1_shapefile_path = os.path.abspath(shapefile_path) if shapefile_path else None # Assuming admin1 shapefile is the same
         
-        
-        # visualize_conflict_risk should accept output_charts_dir as an argument
-        predictions_df = visualize_conflict_risk(
-            model_object=model_results['model'], # Correct: passing the model object
-            data_for_prediction_path=prepared_data_csv_path,
-            admin1_shapefile_path=abs_admin1_shapefile_path,
-            output_charts_dir=charts_dir, # Pass the correct charts directory
-            output_reports_dir=reports_dir, # Pass the correct reports directory
-            prediction_offset_months=prediction_window_months # Use pipeline's setting
-        )
-
-        if predictions_df is None or predictions_df.empty:
-            logger.warning("Prediction visualization step did not produce output.")
-            # Create a dummy df if it's None, for the report
-            predictions_df = pd.DataFrame(columns=['admin1', 'country', 'conflict_probability', 'risk_category'])
-
+     
+        if model_results and 'model' in model_results: # Add a check
+            actual_model_object = model_results['model']
+            predictions_df = visualize_conflict_risk(
+                model_object=actual_model_object, # <<< Pass the actual model object
+                data_path=prepared_data_csv_path,
+                admin1_shapefile=abs_admin1_shapefile_path,
+                output_charts_dir=charts_dir,
+                output_reports_dir=reports_dir,
+                prediction_offset_months=prediction_window_months
+            )
+        else:
+            logger.error("Spatial model object not found in model_results. Skipping visualization.")
+            predictions_df = pd.DataFrame(columns=['admin1', 'country', 'conflict_probability', 'risk_category']) # Ensure it's defined
+       
 
         # --- Step 4: Run baseline model for comparison if requested ---
         baseline_results_dict = None
@@ -277,3 +273,4 @@ if __name__ == "__main__":
         run_baseline=not args.skip_baseline,
         shapefile_path=args.shapefile
     )
+    # Note: If shapefile_path is None, prepare_acled_data and train_spatial_model should handle it gracefully

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 import geopandas as gpd
 import matplotlib.pyplot as plt
 # from sklearn.ensemble import RandomForestClassifier # Not used in train_spatial_model
@@ -195,13 +196,21 @@ def add_country_based_spatial_features(df):
     return df_copy
 
 
-def train_spatial_model(data_path,
-                        shapefile_path=None,
-                        output_model_path='models/spatial_conflict_model.pkl', # Default output path
-                        output_charts_dir='charts'):                            # Default output dir
+def train_spatial_model(data_path, shapefile_path, output_model_path='models/spatial_conflict_model.pkl', # ADDED
+                        output_charts_dir='charts'):
     """
-    Train a model incorporating spatial features for conflict prediction.
-    Outputs (model, charts, feature importances) will be saved to specified paths.
+    Train a model incorporating spatial features for conflict prediction
+    
+    Parameters:
+    -----------
+    data_path : str
+        Path to the prepared modeling data
+    shapefile_path : str
+        Path to admin1 boundary shapefile (optional)
+        
+    Returns:
+    --------
+    Trained model and evaluation metrics
     """
     print(f"Loading prepared data from: {data_path}")
     df = pd.read_csv(data_path)
@@ -277,39 +286,50 @@ def train_spatial_model(data_path,
     pr_auc = auc(recall, precision)
     print(f"PR AUC: {pr_auc:.4f}")
     
-    # Ensure output directories exist
-    os.makedirs(output_charts_dir, exist_ok=True)
-    if os.path.dirname(output_model_path): # Check if output_model_path includes a directory
-        os.makedirs(os.path.dirname(output_model_path), exist_ok=True)
-
     pr_curve_path = os.path.join(output_charts_dir, 'pr_curve_spatial_model.png')
+    # Plot PR curve
     plt.figure(figsize=(8, 6))
-    plt.plot(recall, precision, marker='.', label=f'XGBoost (PR AUC = {pr_auc:.2f})')
-    plt.xlabel('Recall'); plt.ylabel('Precision'); plt.title('Precision-Recall Curve - Spatial Model')
-    plt.legend(); plt.grid(True); plt.savefig(pr_curve_path); plt.close()
+    plt.plot(recall, precision, marker='.')
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.title(f'Precision-Recall Curve - Spatial Model (AUC: {pr_auc:.4f})')
+    plt.grid(True)
+    plt.savefig(pr_curve_path) # Use the constructed path
+    plt.close()
     print(f"Saved PR curve to {pr_curve_path}")
     
+    # Feature importance
     importances = model.feature_importances_
-    feature_importance_df = pd.DataFrame({
-        'Feature': X_train.columns, # Use X_train.columns for features model actually saw
-        'Importance': importances
-    }).sort_values('Importance', ascending=False)
+    indices = np.argsort(importances)[::-1]
     
-    fi_plot_path = os.path.join(output_charts_dir, 'feature_importance_spatial_model.png')
-    plt.figure(figsize=(12, 10))
-    top_n_features = min(20, len(feature_importance_df))
-    plt.title(f'Top {top_n_features} Feature Importances - Spatial Model')
-    plt.barh(feature_importance_df['Feature'][:top_n_features], feature_importance_df['Importance'][:top_n_features], align='center')
-    plt.gca().invert_yaxis(); plt.xlabel('Importance'); plt.tight_layout(); plt.savefig(fi_plot_path); plt.close()
+    fi_plot_path = os.path.join(output_charts_dir, 'feature_importance_spatial_model.png') 
+    plt.figure(figsize=(12, 8))
+    plt.title('Feature Importances - Spatial Model')
+    plt.bar(range(min(20, X_train.shape[1])), importances[indices[:20]], align='center')
+    plt.xticks(range(min(20, X_train.shape[1])), [feature_cols[i] for i in indices[:20]], rotation=90)
+    plt.tight_layout()
+    plt.savefig(fi_plot_path) # Use the constructed path
+    plt.close()
     print(f"Saved feature importance plot to {fi_plot_path}")
     
     print("\nTop 10 important features:")
-    print(feature_importance_df.head(10))
-    fi_csv_path = os.path.join(output_charts_dir, 'spatial_feature_importances.csv')
-    feature_importance_df.to_csv(fi_csv_path, index=False)
-    print(f"Saved feature importances to {fi_csv_path}")
+    for i in range(min(10, len(indices))):
+        print(f"{feature_cols[indices[i]]}: {importances[indices[i]]:.4f}")
     
-    with open(output_model_path, 'wb') as f:
+    # Save feature importances to CSV for analysis
+    feature_importance_df = pd.DataFrame({
+        'Feature': feature_cols,
+        'Importance': importances
+    })
+    feature_importance_df = feature_importance_df.sort_values('Importance', ascending=False)
+    feature_importance_df.to_csv('spatial_feature_importances.csv', index=False)
+    print("Saved feature importances to 'spatial_feature_importances.csv'")
+    
+    # Save the model
+    import pickle
+    if os.path.dirname(output_model_path): # Check if output_model_path includes a directory part
+        os.makedirs(os.path.dirname(output_model_path), exist_ok=True)
+    with open('spatial_conflict_model.pkl', 'wb') as f:
         pickle.dump(model, f)
     print(f"Saved model to {output_model_path}")
     

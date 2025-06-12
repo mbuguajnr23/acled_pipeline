@@ -14,3 +14,7 @@ output_pipeline_run/
 # Ignore all files in the data folder
 data/*
 !data/.gitkeep
+
+output_pipeline_run/
+
+__pycache__

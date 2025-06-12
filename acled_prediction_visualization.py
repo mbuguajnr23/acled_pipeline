@@ -7,94 +7,70 @@ from matplotlib.colors import LinearSegmentedColormap
 import seaborn as sns
 # import calendar # Not used
 from datetime import datetime, timedelta
-import os # For path joining and directory creation
-import logging # For logging
+import logging
+import os
 
-# Get a logger for this module
+# Configure logging
+from acled_spatial_model import add_spatial_features
+
 logger_viz = logging.getLogger("ACLED_Pipeline.Visualization")
 
-def visualize_conflict_risk(
-    model_object,                   # Changed from model_path
-    data_for_prediction_path,       # Path to the CSV containing all features
-    admin1_shapefile_path=None,     # Path to the admin1 shapefile
-    output_charts_dir='charts',     # Directory for PNG charts
-    output_reports_dir='reports',   # Directory for CSV reports
-    prediction_offset_months=1      # How many months from latest data date to label prediction for
-):
+def visualize_conflict_risk(model_object, data_path, admin1_shapefile=None, output_charts_dir='charts_dir', output_reports_dir='reports_dir', prediction_offset_months=1 ):
     """
-    Generate and visualize conflict risk predictions.
-    Uses the provided model object and data to make predictions for the "next" period.
-    Saves visualizations and tabular reports to specified output directories.
-    """
-    logger_viz.info("Starting prediction generation and visualization...")
-    logger_viz.info(f"Output charts to: {os.path.abspath(output_charts_dir)}")
-    logger_viz.info(f"Output reports to: {os.path.abspath(output_reports_dir)}")
-
-    # Ensure output directories exist
-    os.makedirs(output_charts_dir, exist_ok=True)
-    os.makedirs(output_reports_dir, exist_ok=True)
-
-    # Model is already loaded and passed as model_object
-    model = model_object
-    if not hasattr(model, 'predict_proba') or not hasattr(model, 'feature_names_in_'):
-        logger_viz.error("Provided model_object does not seem to be a trained scikit-learn/XGBoost model with feature_names_in_.")
-        return pd.DataFrame() # Return empty DataFrame on critical error
-
-    # Load the data for which predictions are to be made
-    logger_viz.info(f"Loading data for prediction from: {data_for_prediction_path}")
-    try:
-        df = pd.read_csv(data_for_prediction_path)
-        df['date'] = pd.to_datetime(df['date'])
-    except FileNotFoundError:
-        logger_viz.error(f"Data file not found: {data_for_prediction_path}")
-        return pd.DataFrame()
-    except Exception as e:
-        logger_viz.error(f"Error loading data {data_for_prediction_path}: {e}")
-        return pd.DataFrame()
-
-    if df.empty:
-        logger_viz.warning("Input DataFrame for prediction is empty.")
-        return pd.DataFrame()
-
-    # We will make predictions for all rows in the df.
-    # The interpretation of 'latest_date' for visualization is separate.
-    # Feature selection should use the model's known features.
+    Generate and visualize conflict risk predictions across Africa
     
-    X_predict = df.copy() # Start with all data
-
-    # Ensure all features the model was trained on are present, fill missing with 0 or -999
-    # And ensure columns are in the same order as during training.
-    model_features = model.feature_names_in_
-    missing_model_features = set(model_features) - set(X_predict.columns)
-    for col in missing_model_features:
-        logger_viz.warning(f"Feature '{col}' expected by model not found in prediction data. Adding it as 0.")
-        X_predict[col] = 0 # Or -999 if that was your training fill value
-
-    # Select only model features in the correct order and apply NaN strategy
-    try:
-        X_predict = X_predict[model_features].fillna(-999) # Use same NaN strategy as in training
-    except KeyError as e:
-        logger_viz.error(f"KeyError during feature selection for prediction: {e}. Model features might not match data columns.")
-        return pd.DataFrame()
-
-    logger_viz.info(f"Generating conflict probability predictions for {len(X_predict)} region-month instances...")
-    try:
-        df['conflict_probability'] = model.predict_proba(X_predict)[:, 1]
-    except Exception as e:
-        logger_viz.error(f"Error during model.predict_proba: {e}. Check feature alignment and data types.", exc_info=True)
-        return pd.DataFrame()
-
-
-    # Define the prediction month label based on the LATEST date in the dataset
-    # This is for labeling visualizations and outputs, not for filtering data for prediction.
-    latest_date_in_data = df['date'].max()
-    # The prediction is for "prediction_offset_months" after the feature date
-    prediction_label_date = latest_date_in_data + pd.DateOffset(months=prediction_offset_months)
-    prediction_label_month_str = prediction_label_date.strftime('%B %Y')
-    prediction_file_suffix = prediction_label_date.strftime("%Y_%m")
-
-    logger_viz.info(f"Predictions generated. Visualizations/reports will be labeled for month: {prediction_label_month_str}")
-
+    Parameters:
+    -----------
+    model_path : str
+        Path to the trained model pickle file
+    data_path : str
+        Path to the prepared modeling data
+    admin1_shapefile : str
+        Path to shapefile with admin1 boundaries (optional)
+    """
+    print("Loading model and data...")
+    # Load the model
+    model = model_object
+    
+    # Load the data
+    df = pd.read_csv(data_path)
+    df['date'] = pd.to_datetime(df['date'])
+    
+    # Get the most recent date in the data
+    latest_date = df['date'].max()
+    
+    # Filter to the latest data point for each region
+    latest_data = df[df['date'] == latest_date].copy()
+    
+    # Define feature columns (excluding non-feature columns)
+    non_feature_cols = ['country', 'admin1', 'date', 'year_month', 
+                        'future_violent_events', 'conflict_occurs']
+    current_month_cols = ['total_events', 'violent_events', 'fatalities', 
+                         'event_diversity', 'actor1_count', 'actor2_count']
+    
+    feature_cols = [col for col in df.columns if col not in non_feature_cols 
+                   and col not in current_month_cols]
+    
+    # Make predictions for the next time period
+    X_predict = latest_data[feature_cols]
+    
+    # Handle any missing features that might be in the model but not in our data
+    missing_cols = set(model.feature_names_in_) - set(X_predict.columns)
+    for col in missing_cols:
+        X_predict[col] = 0  # Add missing columns with default values
+    
+    # Ensure columns are in the right order
+    X_predict = X_predict[model.feature_names_in_]
+    
+    # Generate predictions
+    latest_data['conflict_probability'] = model.predict_proba(X_predict)[:, 1]
+    
+    # Define the prediction month (3 months from latest date by default)
+    pred_month = latest_date + pd.DateOffset(months=3)
+    pred_month_str = pred_month.strftime('%B %Y')
+    
+    print(f"Generating conflict risk predictions for {pred_month_str}...")
+    
     # Create a risk category
     risk_bins = [0, 0.05, 0.2, 0.5, 0.8, 1.0] # Adjusted bins for more granularity at low end
     risk_labels = ['Very Low', 'Low', 'Moderate', 'High', 'Very High']
