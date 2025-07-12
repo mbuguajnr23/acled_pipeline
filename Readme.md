@@ -52,15 +52,6 @@ Basic command:
 python acled_complete_pipeline.py --acled_file data/your_acled_download.csv
 Use code with caution.
 Bash
-Available command-line arguments:
---acled_file ACLED_FILE: (Required) Path to the raw ACLED CSV data file.
---output_dir OUTPUT_DIR: Main directory to save all outputs (default: output_pipeline_run).
---start_date START_DATE: Start date for analysis (YYYY-MM-DD, default: 2012-01-01).
---end_date END_DATE: End date for analysis (YYYY-MM-DD, default: 2022-12-31). (Note: Your last successful run used 2023-12-31, so you might want to update this default in the script or always pass it).
---pred_window PRED_WINDOW: Prediction window in months (default: 1). (Your last successful run used 3).
---event_threshold EVENT_THRESHOLD: Min future violent events for "conflict_occurs" (default: 1).
---shapefile SHAPEFILE: (Optional) Path to Admin1 boundary shapefile for enhanced spatial features and map visualizations.
---skip_baseline: (Optional) If set, baseline models will not be trained.
 
 Example run:
 python acled_complete_pipeline.py ^
