@@ -15,24 +15,6 @@ The pipeline automates several key stages:
 
 For a detailed explanation of the methodology, data processing, feature choices, and model interpretation, please see [EXPLANATION.md](EXPLANATION.md).
 
-## Project Structure
-├── data/ # For raw ACLED data (user-provided)
-├── output_pipeline_run/ # Default output directory for a pipeline run
-│ ├── prepared_data/ # Processed data ready for modeling
-│ ├── models/ # Saved trained models
-│ ├── charts/ # Generated plots and visualizations
-│ ├── reports/ # Textual summaries and CSV reports
-│ └── acled_pipeline.log # Log file for the pipeline run
-├── src/ # Contains the Python modules for each pipeline stage
-│ ├── acled_eda.py # (Optional, if you have a separate EDA script)
-│ ├── acled_feature_engineering.py
-│ ├── acled_spatial_model.py
-│ ├── acled_baseline_model.py
-│ ├── acled_prediction_visualization.py
-│ └── acled_complete_pipeline.py # Main pipeline orchestration script
-├── EXPLANATION.md # In-depth explanation of the project
-├── requirements.txt # Python dependencies
-└── README.md # This file
 
 Getting Started
 Prerequisites
@@ -95,29 +77,6 @@ Use code with caution.
 Bash
 
 (Note: ^ is for line continuation in Windows cmd. Use \ for macOS/Linux. Consider naming output_dir with a timestamp for multiple runs).
-
-Expected Outputs
-After a successful run, the --output_dir (e.g., output_pipeline_run/) will contain:
-prepared_data/: The feature-engineered dataset (acled_modeling_data_prepared.csv).
-models/: Saved trained model files (spatial_conflict_model.pkl).
-charts/:
-Performance plots (PR curves, confusion matrices for baselines).
-Feature importance plots (Gini for RandomForest, SHAP summary for XGBoost).
-Risk visualization charts (distribution, top N regions, country-level risk bars).
-Conflict risk map (if a shapefile was provided and processed successfully).
-reports/:
-pipeline_summary_report.txt: Text summary of the run, parameters, and key results.
-CSV files: full predictions, country-level risk summaries, feature importances.
-acled_pipeline.log: Detailed execution log.
-Key Findings (from example run)
-The XGBoost model with spatial features (PR-AUC: 0.8363, ROC-AUC: 0.8809) slightly outperformed the best baseline (XGBoost_Baseline: PR-AUC 0.8278, ROC-AUC 0.8722).
-Long-term rolling averages (especially 12-month) of violent events, actor counts, and event diversity were highly predictive.
-The model identified plausible high-risk regions consistent with known conflict dynamics.
-Future Work
-Systematic hyperparameter tuning.
-Enhanced spatial feature engineering.
-Integration of external datasets (socio-economic, governance, climate).
-Further efforts to improve recall for the "conflict" class.
 
 
 Acknowledgements
