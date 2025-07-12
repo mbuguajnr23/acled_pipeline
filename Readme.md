@@ -54,14 +54,14 @@ Use code with caution.
 Bash
 
 Example run:
-python acled_complete_pipeline.py ^
-    --acled_file data/acled_data.csv ^
-    --output_dir output_pipeline_run_YYYYMMDD_HHMM ^
-    --start_date 2012-01-01 ^
-    --end_date 2023-12-31 ^
-    --pred_window 3 ^
-    --event_threshold 1 ^
-    --shapefile data/Africa_Countries/Africa_Countries.shp ^
+python acled_complete_pipeline.py 
+    --acled_file data/acled_data.csv
+    --output_dir output_pipeline_run_YYYYMMDD_HHMM 
+    --start_date 2012-01-01 
+    --end_date 2023-12-31 
+    --pred_window 3 
+    --event_threshold 1 
+    --shapefile data/Africa_Countries/Africa_Countries.shp 
     --skip_baseline
 Use code with caution.
 
